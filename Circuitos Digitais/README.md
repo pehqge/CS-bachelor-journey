@@ -4,6 +4,7 @@ Esta disciplina abrange aulas teóricas e práticas, ministradas nos laboratóri
 ## Trabalho Final
 | Trabalho Final | [Repositório do Trabalho](https://github.com/pehqge/UFSC/tree/main/Circuitos%20Digitais/Trabalho%20Final%20da%20Disciplina) |
 | ------  | :-----------------------: |
+
 O trabalho final consiste na criação de um jogo da memória para FPGA. O jogador deve selecionar um nível de dificuldade e iniciar o jogo. Durante alguns segundos, números de 1 a 15 em hexadecimal serão exibidos, e o jogador deve memorizá-los. Em seguida, ele terá 10 segundos para marcá-los nos switches da placa.
 
 ### Funcionamento
