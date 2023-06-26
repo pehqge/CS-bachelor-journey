@@ -6,3 +6,4 @@ A disciplina prática é composta por tarefas feitas em aula, por 4 exercícios 
 O trabalho final consiste num jogo da memória para FPGA. O jogador deverá selecionar um nível de dificuldade e iniciar o jogo. Irá aparecer por alguns segundos numéros de 1 a 15 em Hexadecimal e o jogador deverá lembrar esses números e terá 10 segundos para marcá-los nos switches da placa.
 
 | Trabalho Final | [Repositório do Trabalho](https://github.com/pehqge/UFSC/tree/main/Circuitos%20Digitais/Trabalho%20Final%20da%20Disciplina) |
+| ------  | :-----------------------: |
