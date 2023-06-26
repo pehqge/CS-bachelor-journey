@@ -1,8 +1,6 @@
-# UFSC
-Repositório das disciplinas cursadas por mim no curso bacharelado em Ciências da Computação pela Universidade Federal de Santa Catarina
+# Programação Orientada a Objetos I
+Esta foi uma disciplina focada em aprender Python, principalmente para realização de olimpíadas e maratonas.
 
-### Disciplinas da Graduação
+## Projeto Final
 
-| Código  | Disciplina                | Semestre |
-| ------  | :-----------------------: | -------- |
-| EEL5105 | [Circuitos e Técnicas Digitais](https://github.com/pehqge/UFSC/tree/main/Circuitos%20Digitais) | 1º Semestre - 23.1 |
+Para o projeto final, criei um jogo chamado **misture meu chá!**. Mais detalhes do projeto podem ser encontrados no repositório oficial do jogo: [Misture Meu Chá!](https://github.com/pehqge/Misture-Meu-Cha)
