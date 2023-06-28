@@ -1,5 +1,5 @@
 # UFSC
-Repositório das disciplinas cursadas por mim no curso bacharelado em Ciências da Computação pela Universidade Federal de Santa Catarina
+Repositório de programação das disciplinas cursadas por mim no curso bacharelado em Ciências da Computação pela Universidade Federal de Santa Catarina
 
 ### Disciplinas da Graduação
 
