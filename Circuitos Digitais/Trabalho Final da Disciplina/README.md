@@ -1,4 +1,4 @@
-## Trabalho Final
+# Trabalho Final Circuitos - Jogo da Memória
 O trabalho final consiste na criação de um jogo da memória para FPGA. O jogador deve selecionar um nível de dificuldade e iniciar o jogo. Durante alguns segundos, números de 1 a 15 em hexadecimal serão exibidos, e o jogador deve memorizá-los. Em seguida, ele terá 10 segundos para marcá-los nos switches da placa.
 
 ### Funcionamento
