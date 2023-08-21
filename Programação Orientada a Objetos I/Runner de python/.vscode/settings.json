@@ -1,6 +1,0 @@
-{
-    "code-runner.executorMap": {
-        "python": "python3 error_handler.py < input.txt 2>&1 | tee output.txt && clear && python3 main.py"
-    },
-    "code-runner.runInTerminal": true
-}
