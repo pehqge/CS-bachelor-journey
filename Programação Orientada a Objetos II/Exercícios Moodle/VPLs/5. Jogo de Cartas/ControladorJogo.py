@@ -25,13 +25,15 @@ class ControladorJogo(AbstractControladorJogo):
     Deve ser utilizado TipoPersonagem.TIPO
     @return Retorna o Personagem incluido na lista
     '''
+
     def inclui_personagem_na_lista(self,
                                    energia: int,
                                    habilidade: int,
                                    velocidade: int,
                                    resistencia: int,
                                    tipo: Tipo) -> Personagem:
-        novoPersonagem = Personagem(energia, habilidade, velocidade, resistencia, tipo)
+        novoPersonagem = Personagem(
+            energia, habilidade, velocidade, resistencia, tipo)
         self.personagems.append(novoPersonagem)
         return novoPersonagem
 
@@ -40,6 +42,7 @@ class ControladorJogo(AbstractControladorJogo):
      @param personagem Personagem da nova carta que sera incluida
      @return Retorna a Carta que foi incluida no baralho
      '''
+
     def inclui_carta_no_baralho(self, personagem: Personagem) -> Carta:
         if isinstance(personagem, Personagem):
             novaCarta = Carta(personagem)
@@ -53,12 +56,12 @@ class ControladorJogo(AbstractControladorJogo):
     @param jogador1 Jogador 1
     @param jogador2 Jogador 2
     '''
+
     def iniciaJogo(self, jogador1: Jogador, jogador2: Jogador):
         if len(self.baralho) > 0:
             for _ in range(5):
-                jogador1.mao.append(r.choice(self.baralho))
-                jogador2.mao.append(r.choice(self.baralho))
-        
+                jogador1.inclui_carta_na_mao(r.choice(self.baralho))
+                jogador2.inclui_carta_na_mao(r.choice(self.baralho))
 
     '''
      Realiza uma jogada, ou seja:
@@ -84,7 +87,26 @@ class ControladorJogo(AbstractControladorJogo):
      @return Retorna o Jogador vencedor da rodada.
      Caso ocorra empate entre os jogadores, retorna None
      '''
+
     def jogada(self, mesa: Mesa) -> Jogador:
-        if mesa.carta_jogador1 > mesa.carta_jogador2:
-            mesa.jogador1.inclui_carta_na_mao()
-        
+        jogador1 = mesa.jogador1
+        jogador2 = mesa.jogador2
+        carta_jogador1 = mesa.carta_jogador1
+        carta_jogador2 = mesa.carta_jogador2
+        if (carta_jogador1.valor_total_carta()
+                > carta_jogador2.valor_total_carta()):
+            jogador1.inclui_carta_na_mao(carta_jogador1)
+            jogador1.inclui_carta_na_mao(carta_jogador2)
+        elif (carta_jogador2.valor_total_carta()
+              > carta_jogador1.valor_total_carta()):
+            jogador2.inclui_carta_na_mao(carta_jogador1)
+            jogador2.inclui_carta_na_mao(carta_jogador2)
+        else:
+            jogador1.inclui_carta_na_mao(carta_jogador1)
+            jogador2.inclui_carta_na_mao(carta_jogador2)
+        if jogador1.mao == []:
+            return jogador2
+        elif jogador2.mao == []:
+            return jogador1
+        else:
+            return None
