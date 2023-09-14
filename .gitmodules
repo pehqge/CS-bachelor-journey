@@ -7,3 +7,6 @@
 [submodule "Sistemas Digitais/Atividades em Grupo"]
 	path = Sistemas Digitais/Atividades em Grupo
 	url = https://github.com/pehqge/Sistemas-Digitais-com-Victoria
+[submodule "~/Sistemas Digitais/Atividades em Grupo"]
+	path = ~/Sistemas Digitais/Atividades em Grupo
+	url = https://github.com/pehqge/Sistemas-Digitais-com-Victoria
