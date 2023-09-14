@@ -36,8 +36,8 @@ class AbstractControladorJogo(ABC):
     '''
     @abstractmethod
     def inclui_personagem_na_lista(self, energia: int, habilidade: int,
-                                velocidade: int, resistencia: int,
-                                tipo: Tipo) -> Personagem:
+                                   velocidade: int, resistencia: int,
+                                   tipo: Tipo) -> Personagem:
         pass
 
     '''
