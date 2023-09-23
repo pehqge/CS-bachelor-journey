@@ -1,40 +1,37 @@
 import PySimpleGUI as sg
+from calculadora import CalculadoraIMC
 
-# Definindo o layout da janela
-layout = [
-    [sg.Text('Calculadora de IMC', justification='center', size=(20, 1), font=('Helvetica', 16))],
-    [sg.Text('Peso (kg):'), sg.Input(key='peso')],
-    [sg.Text('Altura (m):'), sg.Input(key='altura')],
-    [sg.Button('Calcular IMC')],
-    [sg.Text('', size=(20, 1), key='resultado', font=('Helvetica', 14))]
-]
+class Interface:
+    def __init__(self):
+        sg.theme('Topanga')
+        self.__programa = [
+            [sg.Text('       Calculadora de IMC', font=('Futura', 24))],
+            [sg.Text('', size=(15, 1))],
+            [sg.Text('Peso (kg)  '), sg.InputText(key="peso")],
+            [sg.Text('Altura (cm)'), sg.InputText(key="altura")],
+            [sg.Text('', size=(15, 1))],
+            [sg.Button('Calcular', size=(55, 1))],
+        ]
+        
+        self.__janela = sg.Window('Calculadora de IMC', self.__programa)
+        
+    def main(self):
+        while True:
+            event, values = self.__janela.read()
 
-# Criando a janela
-window = sg.Window('Calculadora de IMC', layout, resizable=True, finalize=True)
-
-# Loop principal
-while True:
-    event, values = window.read()
-
-    # Verifica se o usuário fechou a janela
-    if event == sg.WINDOW_CLOSED:
-        break
-
-    # Se o botão 'Calcular IMC' foi pressionado
-    if event == 'Calcular IMC':
-        try:
-            # Obtém os valores de peso e altura fornecidos pelo usuário
-            peso = float(values['peso'])
-            altura = float(values['altura'])
-
-            # Calcula o IMC
-            imc = peso / (altura ** 2)
-
-            # Exibe o resultado na interface
-            window['resultado'].update(f'Seu IMC é: {imc:.2f}')
-        except ValueError:
-            # Trata erros de entrada inválida
-            window['resultado'].update('Por favor, insira valores válidos para peso e altura.')
-
-# Fechando a janela
-window.close()
+            if event == sg.WIN_CLOSED:
+                break
+            elif event == "Calcular":
+                try:
+                    peso = float(values["peso"])
+                    altura = float(values["altura"])/100
+                    calculadora = CalculadoraIMC(peso, altura)
+                    
+                    imc = calculadora.calcular()
+                    imc_tipo = calculadora.tipoIMC(imc)
+                        
+                    sg.popup(f"Seu IMC é {imc:.2f} e você está {imc_tipo}", title="Resultado")
+                except ValueError:
+                    sg.popup_error("O input está errado. Coloque valores corretos")
+                    
+        self.__janela.close()
