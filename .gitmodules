@@ -1,9 +1,9 @@
-[submodule "Programação Orientada a Objetos II/Exercícios em Aula/ChatBots"]
-	path = Programação Orientada a Objetos II/Exercícios em Aula/ChatBots
-	url = https://github.com/INE-UFSC/sistema-chatbots-grupo-1-23-2
 [submodule "Programação Orientada a Objetos I/Projeto Final/Repositorio Original"]
 	path = Programação Orientada a Objetos I/Projeto Final/Repositorio Original
 	url = https://github.com/pehqge/Misture-Meu-Cha
 [submodule "Sistemas Digitais/Atividades em Grupo"]
 	path = Sistemas Digitais/Atividades em Grupo
 	url = https://github.com/victoriavllso/sistemas-digitais
+[submodule "Object-Oriented Programming II"]
+	path = Object-Oriented Programming II
+	url = https://github.com/pehqge/oop-2
