@@ -1,11 +1,14 @@
-# UFSC
-Repositório de programação das disciplinas cursadas por mim no curso bacharelado em Ciências da Computação pela Universidade Federal de Santa Catarina
+[<kbd><img title="Brazilian Portuguese" alt="Brazilian Portuguese" src="https://flagicons.lipis.dev/flags/4x3/br.svg" width="22"></kbd> Versão em português](README_PT.md)
 
-### Disciplinas da Graduação
+# Computer Science Coursework
+Repository for the programming courses I have taken in the Bachelor’s program in Computer Science at the Federal University of Santa Catarina.
 
-| Código  | Disciplina                | Semestre | Trabalho Final |
-| ------  | :-----------------------: | :--------: | :-------------: |
-| INE5402 | [Programação Orientada a Objetos I](https://github.com/pehqge/UFSC/tree/main/Programa%C3%A7%C3%A3o%20Orientada%20a%20Objetos%20I) | **1º Semestre** - 23.1 | [Misture Meu Chá!](https://github.com/pehqge/Misture-Meu-Cha) |
-| EEL5105 | [Circuitos e Técnicas Digitais](https://github.com/pehqge/UFSC/tree/main/Circuitos%20Digitais) | **1º Semestre** - 23.1 | [Jogo da Memória - FPGA](https://github.com/pehqge/UFSC/tree/main/Circuitos%20Digitais/Trabalho%20Final%20da%20Disciplina)
-| INE5404 | [Programação Orientada a Objetos II](https://github.com/pehqge/oop-2) | **2º Semestre** - 23.2 | [The Lost Key](https://github.com/pehqge/the-lost-key) |
-| INE5406 | [Sistemas Digitais](https://github.com/pehqge/UFSC/tree/main/Sistemas%20Digitais) | **2º Semestre** - 23.2 |  |
+### Undergraduate Courses Taken at UFSC
+
+| Course ID |          Course           | Semester Taken | Final Project |
+| --------- | :-----------------------: | :------------: | :-----------: |
+|  INE5402  | [Object-Oriented Programming I](https://github.com/pehqge/UFSC/tree/main/Programa%C3%A7%C3%A3o%20Orientada%20a%20Objetos%20I) | **1st Semester** - 23.1 | [Misture Meu Chá!](https://github.com/pehqge/Misture-Meu-Cha) |
+|  EEL5105  | [Digital Circuits and Techniques](https://github.com/pehqge/UFSC/tree/main/Circuitos%20Digitais) | **1st Semester** - 23.1 | [Memory Game - FPGA](https://github.com/pehqge/UFSC/tree/main/Circuitos%20Digitais/Trabalho%20Final%20da%20Disciplina)
+|  INE5404  | [Object-Oriented Programming II](https://github.com/pehqge/oop-2) | **2nd Semester** - 23.2 | [The Lost Key](https://github.com/pehqge/the-lost-key) |
+|  INE5406  | [Digital Systems](https://github.com/pehqge/UFSC/tree/main/Sistemas%20Digitais) | **2nd Semester** - 23.2 |  |
+
