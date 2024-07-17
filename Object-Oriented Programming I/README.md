@@ -4,8 +4,8 @@ This course focused on learning Python, primarily for programming competitions a
 
 # Final Project
 
-For the final project, I created a game called **Mix My Tea!**. More details about the project can be found in the official game repository:
-## Original Repository: [Mix My Tea!](https://github.com/pehqge/Misture-Meu-Cha)
+For the final project, I created a game called **Misture meu chá!** (Mix My Tea!). More details about the project can be found in the official game repository:
+## Original Repository: [Misture meu chá!](https://github.com/pehqge/Misture-Meu-Cha)
 
 <div align="center">
     <div style="display: flex; align-items: center;">
