@@ -1,0 +1,15 @@
+--------------- dados do aluno ---------------
+nome: Pedro Henrique Gimenez e Victória Rodrigues Veloso
+matricula: 23102766 e 23100460
+--------------- dados do fpga ----------------
+familia: Cyclone III
+dispositivo: EP3C5E144C7
+-------- dados de utilizacao da placa --------
+total combinational functions: 2 / 5,136 ( < 1 % )
+dedicates logic registers: 0 / 5,136 ( 0 % )
+total pins: 7 / 95 ( 7 % )
+-------------- dados de atraso ---------------
+input port: a[0]
+output port: y[0]
+atraso (ns): 8.524
+RR, RF, FR, FF: FR

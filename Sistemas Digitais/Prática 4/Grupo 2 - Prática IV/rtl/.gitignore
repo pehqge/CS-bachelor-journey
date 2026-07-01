@@ -1,0 +1,6 @@
+.DS_Store
+.bak
+.qsw
+.db/
+.incremental_db/
+.output_files/
