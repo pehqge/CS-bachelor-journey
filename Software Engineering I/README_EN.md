@@ -2,12 +2,14 @@
 
 # INE5417 - Software Engineering I
 
-The course followed the full software engineering process, from requirements to a working implementation, applied to a board game.
+In this course I went through the whole software engineering process, from requirements to a working implementation, applied to a board game.
 
-## Final Project — Soma 10
+The final project was **Soma 10**, a two-player game on 16 interconnected squares. You win by collecting the most pieces through sums that add up to 10. I delivered the requirements specification, the UML modeling and the game in Python. The game code lives in its own repository, included here as a submodule.
 
-**Soma 10** is a two-player board game on 16 interconnected squares, where the goal is to collect the most pieces by making sums that add up to 10. The project includes the requirements specification, the UML modeling and the implementation.
-
-The game is kept in its own repository as a submodule ([soma10](https://github.com/pehqge/soma10)); `doc/` holds the requirements specification and the Visual Paradigm models.
-
-`Cronograma.pdf` is the course schedule.
+| Item | What it is |
+|------|------------|
+| [soma10 (game repository)](https://github.com/pehqge/soma10) | Submodule with the full game: code, documentation and dependencies. |
+| [Requirements specification](https://github.com/pehqge/soma10/blob/main/doc/Especificacao%20de%20Requisitos.pdf) | Document with the game requirements. |
+| [UML modeling (Visual Paradigm)](https://github.com/pehqge/soma10/tree/main/doc/modelagem) | `.vpp` project with the diagrams. |
+| [Source code (src)](https://github.com/pehqge/soma10/tree/main/src) | Game implementation in Python. |
+| [Cronograma.pdf](Cronograma.pdf) | Course schedule. |

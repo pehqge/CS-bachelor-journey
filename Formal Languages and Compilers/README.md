@@ -2,141 +2,98 @@
 
 # INE5421 - Linguagens Formais e Compiladores
 
-## Gerador de Analisador Léxico e Sintático
+## Gerador de analisador léxico e sintático
 
-**Estudantes:** Leonardo de Sousa Marques, Pedro Henrique Gimenez e Thayse Estevo Teixeira  
-**Disciplina:** Linguagens Formais e Compiladores (INE5421/UFSC)
+Estudantes: Leonardo de Sousa Marques, Pedro Henrique Gimenez e Thayse Estevo Teixeira.
 
-## Descrição
+Um programa com interface gráfica para análise léxica e sintática. Dá para definir expressões regulares para a parte léxica, gramáticas livres de contexto para a análise sintática SLR, ver os autômatos e as tabelas de parsing, e analisar um código fonte do começo ao fim.
 
-Sistema completo para análise léxica e sintática. Permite definir expressões regulares para análise léxica, gramáticas livres de contexto para análise sintática SLR, visualizar autômatos e tabelas de parsing, e realizar análise completa de código fonte.
+Repositório original: [leonardosm14/GALS-INE5421](https://github.com/leonardosm14/GALS-INE5421)
 
-## Funcionalidades
+## O que ele faz
 
-### Análise Léxica
-- **Definição de Expressões Regulares**: Entrada no formato `nome: ER` com suporte a referências
-- **Conversão para AFD**: Conversão automática de ER para autômatos finitos determinísticos
-- **União e Determinização**: União via ε-transições e determinização automática
-- **Minimização**: Remoção de estados inalcançáveis e equivalentes
-- **Visualização**: Tabelas de transições e diagramas de autômatos
-- **Exportação JFLAP**: Exportação para formato `.jff`
-- **Análise Léxica**: Processamento de lexemas e geração de tokens `<lexema, tipo>`
+Análise léxica:
 
-### Análise Sintática
-- **Gramáticas Livres de Contexto**: Entrada de gramáticas no formato `<S> ::= <A> | b`
-- **Parser SLR**: Construção automática de tabelas ACTION/GOTO
-- **Visualização LR(0)**: Diagrama da coleção canônica de itens LR(0)
-- **Análise Sintática**: Parsing de tokens com histórico completo
+- Definições regulares no formato `nome: ER`, com referências.
+- Conversão de ER para autômato finito determinístico (AFD).
+- União por ε-transições e determinização automática.
+- Minimização (remove estados inalcançáveis e equivalentes).
+- Tabelas de transição e diagramas dos autômatos.
+- Exportação para JFLAP (`.jff`).
+- Geração de tokens no formato `<lexema, tipo>`.
 
-## Estrutura do Projeto
+Análise sintática:
 
-```
-src/
-├── main.py                      # Ponto de entrada
-├── controller/
-│   └── controller.py            # Controlador MVC
-├── view/
-│   ├── main.ui                  # Interface gráfica (Qt Designer)
-│   └── view.py                  # View
-└── model/
-    ├── automata/
-    │   └── automaton.py         # Classe Automaton
-    ├── regex/
-    │   ├── converter.py         # Conversor ER → AFD
-    │   ├── regular_expression.py
-    │   └── syntax_tree.py
-    ├── grammar/
-    │   ├── cfg.py               # Gramáticas livres de contexto
-    │   └── symbol_table.py      # Tabela de símbolos
-    └── parser/
-        └── slr.py               # Parser SLR
-```
+- Gramáticas livres de contexto no formato `<S> ::= <A> | b`.
+- Parser SLR com construção automática das tabelas ACTION/GOTO.
+- Diagrama da coleção canônica de itens LR(0).
+- Parsing de tokens com histórico completo.
 
-## Requisitos
+## Estrutura
 
-- Python 3.x
-- PyQt6 6.10.0
-- Graphviz (para visualização de diagramas)
+| Pasta / Arquivo | O que tem |
+|---|---|
+| [src/](src) | Código-fonte, organizado em MVC. |
+| [docs/](docs) | Enunciados e documentação. |
+| [inputs/](inputs) | Exemplos de entrada (ERs e gramáticas). |
+| [Makefile](Makefile) | Setup: instala Graphviz, cria o venv e instala as dependências. |
+| [requirements.txt](requirements.txt) | Dependências Python (PyQt6 e graphviz). |
 
-## Instalação
+### Código (`src/`)
 
-### Opção 1: Usando Makefile (recomendado)
+| Arquivo | O que tem |
+|---|---|
+| [main.py](src/main.py) | Ponto de entrada. |
+| [controller/controller.py](src/controller/controller.py) | Controlador (MVC). |
+| [view/view.py](src/view/view.py) | A view. |
+| [view/main.ui](src/view/main.ui) | Interface gráfica (Qt Designer). |
+| [view/automata_image_dialog.py](src/view/automata_image_dialog.py) | Diálogo que mostra a imagem do autômato. |
+| [view/utils/zoomable_graphics_view.py](src/view/utils/zoomable_graphics_view.py) | Visualizador com zoom. |
+| [model/automata/automaton.py](src/model/automata/automaton.py) | Classe do autômato. |
+| [model/regex/converter.py](src/model/regex/converter.py) | Conversor de ER para AFD. |
+| [model/regex/regular_expression.py](src/model/regex/regular_expression.py) | Expressão regular. |
+| [model/regex/syntax_tree.py](src/model/regex/syntax_tree.py) | Árvore de sintaxe da ER. |
+| [model/grammar/cfg.py](src/model/grammar/cfg.py) | Gramáticas livres de contexto. |
+| [model/grammar/symbol_table.py](src/model/grammar/symbol_table.py) | Tabela de símbolos. |
+| [model/parser/slr.py](src/model/parser/slr.py) | Parser SLR. |
+
+### Documentação (`docs/`)
+
+| Arquivo | O que tem |
+|---|---|
+| [documentation.pdf](docs/documentation.pdf) | Documentação do projeto. |
+| [Trabalho 1 - Requisitos.pdf](docs/Trabalho%201%20-%20Requisitos.pdf) | Enunciado do Trabalho 1. |
+| [Trabalho 2 - Requisitos.pdf](docs/Trabalho%202%20-%20Requisitos.pdf) | Enunciado do Trabalho 2. |
+
+### Entradas de exemplo (`inputs/`)
+
+| Pasta | O que tem |
+|---|---|
+| [regular expressions/](inputs/regular%20expressions) | Exemplos de definições regulares e sentenças de teste. |
+| [grammars/](inputs/grammars) | Exemplos de gramáticas. |
+
+## Como instalar
+
+Precisa de Python 3, PyQt6 e Graphviz. O jeito mais rápido é o Makefile:
 
 ```bash
 make setup
-source venv/bin/activate #ou venv\Scripts\activate, para Windows.
+source venv/bin/activate   # no Windows: venv\Scripts\activate
 ```
 
-Isso instala Graphviz, cria ambiente virtual e instala dependências Python.
+Isso instala o Graphviz, cria o ambiente virtual e instala as dependências.
 
-### Opção 2: Manual
-
-```bash
-# Instalar Graphviz
-# macOS: brew install graphviz
-# Linux: sudo apt install graphviz
-# Windows: winget install Graphviz.Graphviz
-
-# Criar ambiente virtual
-python3 -m venv venv
-
-# Ativar ambiente virtual
-# macOS/Linux: source venv/bin/activate
-# Windows: venv\Scripts\activate
-
-# Instalar dependências
-pip install -r requirements.txt
-```
-
-## Execução
+## Como rodar
 
 ```bash
 cd src
 python main.py
 ```
 
-## Interface do Usuário
-
-A interface possui 5 abas principais:
-
-1. **Regex**: Definição e processamento de expressões regulares
-2. **Automata**: Visualização e exportação de autômatos finitos
-3. **Analysis**: Análise léxica de código fonte
-4. **SLR**: Definição de gramáticas e análise sintática
-5. **Syntax**: Parsing sintático de tokens
-
-## Exemplo de Uso
-
-### Análise Léxica
-
-1. **Definir Expressões Regulares** (aba Regex):
-   ```
-   digit: [0-9]
-   num: digit.digit*
-   id: [a-z].[a-z0-9]*
-   ```
-
-2. **Processar**: Gera autômatos e tabela de análise léxica
-
-3. **Analisar Código** (aba Analysis): Inserir lexemas e gerar tokens
-
-### Análise Sintática
-
-1. **Definir Gramática** (aba SLR):
-   ```
-   <S> ::= <S> or <A> | <A>
-   <A> ::= <A> and <B> | <B>
-   <B> ::= not <B> | ( <S> ) | true | false
-   ```
-
-2. **Construir Tabela SLR**: Gera tabelas ACTION/GOTO automaticamente
-
-3. **Analisar Tokens** (aba Syntax): Importar tokens da análise léxica e fazer parsing
-
 ## Notações
 
-- **ε (epsilon)**: Representado como `&`
-- **Não-terminais**: Formato `<Nome>` (ex: `<S>`, `<expr>`)
-- **Terminais**: Qualquer símbolo não entre `< >`
-- **Tokens**: Formato `<lexema, tipo>` ou `<lexema, erro!>` para erros
-- **Definições Regulares**: Formato `nome: ER`
+- `&` representa ε (epsilon).
+- Não-terminais no formato `<Nome>` (ex: `<S>`, `<expr>`).
+- Terminais: qualquer símbolo fora de `< >`.
+- Tokens no formato `<lexema, tipo>` (ou `<lexema, erro!>` para erros).
+- Definições regulares no formato `nome: ER`.

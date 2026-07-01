@@ -2,14 +2,30 @@
 
 # INE5420 - Computer Graphics
 
-This folder contains the resources and assignments for the Computer Graphics course, taught by professor Aldo Von Wangenheim. Topics covered include 2D and 3D geometric transformations, projections, raytracing, lighting, graphics APIs and animation.
+These are my assignments for the Computer Graphics course, taught by professor Aldo Von Wangenheim. I built the main project with [João Vitor Curcio Sutter](https://github.com/JVSutter): an Interactive Graphics System (SGI) written in Python. It started as a 2D window/viewport editor and grew with each assignment into a 3D system, with perspective projection and bicubic Bézier surfaces. Each `Trabalho 1.x` below is a version of the system at that stage. Every assignment was graded 10.
 
-## Interactive Graphics System (SGI)
+The original project repository is at [JVSutter/Sistema-Grafico-Interativo](https://github.com/JVSutter/Sistema-Grafico-Interativo).
 
-The main deliverable was an Interactive Graphics System, built over ten assignments, each one adding new features. The group work was done by [Pedro Henrique Gimenez](https://github.com/pehqge) and [João Vitor Curcio Sutter](https://github.com/JVSutter).
+## Final system
 
-The system started as a 2D graphics editor (window/viewport, panning, zooming, points, segments and polygons) and grew to support 2D transformations with homogeneous coordinates, `.obj` import/export, polygon clipping, Bézier and B-Spline curves, and finally a full transition to 3D with orthogonal and perspective projection and bicubic Bézier surfaces.
+| Folder | What it is |
+| :----- | :--------- |
+| [SGI](SGI) | Final version of the Interactive Graphics System, ready to run. Python MVC layout (`model`, `view`, `controller`), with a `Makefile` and `main.py`. Run instructions are in the [inner README](SGI/README.md). |
 
-Every assignment was graded 10, and the team received the maximum grade for the SGI.
+## Assignments
 
-Original repository: [JVSutter/Sistema-Grafico-Interativo](https://github.com/JVSutter/Sistema-Grafico-Interativo)
+Each folder holds the SGI at the stage of that assignment.
+
+| Assignment | Topic |
+| :--------- | :---- |
+| [Trabalho 1.1](Trabalho%201.1) | Basic 2D graphics editor: window and viewport, pan, zoom, points, lines and polygons. |
+| [Trabalho 1.2](Trabalho%201.2) | 2D transformations (translation, scaling and rotation) with homogeneous coordinates. |
+| [Trabalho 1.3](Trabalho%201.3) | Import and export of `.obj` (Wavefront) files. |
+| [Trabalho 1.4](Trabalho%201.4) | Clipping of points, lines and polygons at the window edges. |
+| [Trabalho 1.5](Trabalho%201.5) | Bézier curves via blending functions. |
+| [Trabalho 1.6](Trabalho%201.6) | B-Spline curves with forward differences. |
+| [Trabalho 1.7](Trabalho%201.7) | 3D point class, 3D objects and parallel (orthogonal) projection. |
+| [Trabalho 1.8](Trabalho%201.8) | Perspective projection. |
+| [Trabalho 1.9](Trabalho%201.9) | Bicubic Bézier surfaces. |
+| [Trabalho 1.10](Trabalho%201.10) | Bicubic surfaces with forward differences. |
+| [Trabalho Final](Trabalho%20Final) | Modeling of an engineering object and the course game. `link.txt` points to the Drive folder with the model and the game. |

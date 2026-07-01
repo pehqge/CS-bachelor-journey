@@ -1,106 +1,87 @@
 [<kbd><img title="Português" alt="Português" src="https://flagicons.lipis.dev/flags/4x3/br.svg" width="22"></kbd> Versão em português](README.md)
 
-# Distributed filesystem (SMR)
+# INE5418 - Distributed Systems
 
-> INE5418 — Computação Distribuída · UFSC · 2026/1 · Trabalho 2
-> Grupo 17 — Gustavo Rodrigues Alves D'Angelo, Pedro Henrique Gimenez, Tom Pereira Hunt
+Group 17: Gustavo Rodrigues Alves D'Angelo, Pedro Henrique Gimenez and Tom Pereira Hunt.
 
-A strongly consistent distributed filesystem built on State Machine Replication
-(SMR), in plain Python. Upload / download / list / delete, replicated across a
-3-node cluster.
+These are the two course projects, each in its own folder. Trabalho 1 is a distributed URL shortener with caching and a circuit breaker. Trabalho 2 is a distributed filesystem built on State Machine Replication (SMR).
 
-## Layout
+| Folder | What it holds |
+|---|---|
+| [Trabalho 1/](Trabalho%201) | Distributed URL shortener (client, interceptor and REST server). |
+| [Trabalho 2/](Trabalho%202) | Distributed filesystem on SMR, replicated across 3 nodes. |
 
-```text
-distributed-fs/
-├── src/                  # source
-│   ├── app_protocol.py   # application wire protocol
-│   ├── filesystem_app.py # the filesystem state machine
-│   ├── server.py         # replica node entry point
-│   ├── client.py         # TCP CLI client
-│   └── replication/      # the reusable SMR building block
-│       ├── __init__.py   # exposes ReplicationNode, AppListener
-│       ├── replication.py# SMR engine: consensus loop + recovery
-│       ├── communicator.py# length-prefixed TCP framing
-│       └── protocol.py   # SMR wire protocol
-├── docs/                 # architecture + protocol notes
-│   ├── docs.md           # how it's built and why
-│   └── protocol.md       # the binary wire protocol
-├── scripts/              # cluster automation
-│   ├── start_nodes.sh    # bring up a local 3-node cluster
-│   └── cleanup.sh        # stop nodes and wipe test-env
-└── test-env/             # runtime state (generated)
-    ├── node-1-fs/        # node 1's isolated filesystem
-    ├── node-2-fs/        # node 2's isolated filesystem
-    ├── node-3-fs/        # node 3's isolated filesystem
-    ├── logs/             # per-node logs
-    └── pids/             # running process PIDs
-```
+Original repository: [gustavovonn/distributed-fs](https://github.com/gustavovonn/distributed-fs)
 
-## Running it
+## Trabalho 1 - Distributed URL shortener
 
-Start a 3-node cluster from the project root:
+Three parts talking over two protocols: clients speak TCP (one JSON message per line) to an interceptor, and the interceptor speaks HTTP REST to the server. The interceptor is transparent (the server does not know it exists) and adds two patterns: Cache-Aside (LRU + TTL) and Circuit Breaker.
+
+Full documentation and run instructions live in the [Trabalho 1 README](Trabalho%201/README.md).
+
+| Path | Description |
+|---|---|
+| [README.md](Trabalho%201/README.md) | Full project documentation. |
+| [relatorio.pdf](Trabalho%201/relatorio.pdf) | Project report. |
+| [config.txt](Trabalho%201/config.txt) | Shared config (host, ports, cache, circuit breaker). |
+| [server/server.py](Trabalho%201/server/server.py) | REST server (standard-library `http.server`). |
+| [interceptor/interceptor.py](Trabalho%201/interceptor/interceptor.py) | TCP server: request routing and dispatch. |
+| [interceptor/cache.py](Trabalho%201/interceptor/cache.py) | Thread-safe LRU cache with TTL. |
+| [interceptor/circuit_breaker.py](Trabalho%201/interceptor/circuit_breaker.py) | Circuit breaker (CLOSED / OPEN / HALF_OPEN). |
+| [interceptor/protocol.py](Trabalho%201/interceptor/protocol.py) | JSON-per-line protocol. |
+| [clients/python/url_client.py](Trabalho%201/clients/python/url_client.py) | Python client library. |
+| [clients/javascript/url_client.js](Trabalho%201/clients/javascript/url_client.js) | Node.js client library. |
+| [examples/](Trabalho%201/examples) | Demos: basic usage, cache and circuit breaker. |
+
+## Trabalho 2 - Distributed filesystem (SMR)
+
+A strongly consistent filesystem in plain Python, built on State Machine Replication. Upload, download, list and delete files, replicated across a 3-node cluster, staying consistent through faults. The client gets the full node list and finds the leader on its own, so you never need to know which node is the leader.
+
+### Code
+
+| Path | Description |
+|---|---|
+| [src/server.py](Trabalho%202/src/server.py) | Replica node entry point. |
+| [src/client.py](Trabalho%202/src/client.py) | TCP command-line client. |
+| [src/filesystem_app.py](Trabalho%202/src/filesystem_app.py) | The filesystem state machine. |
+| [src/app_protocol.py](Trabalho%202/src/app_protocol.py) | Application protocol. |
+| [src/promote.py](Trabalho%202/src/promote.py) | Promotes a follower to leader at runtime. |
+| [src/replication/replication.py](Trabalho%202/src/replication/replication.py) | SMR engine: consensus loop and recovery. |
+| [src/replication/communicator.py](Trabalho%202/src/replication/communicator.py) | Length-prefixed TCP framing. |
+| [src/replication/protocol.py](Trabalho%202/src/replication/protocol.py) | SMR wire protocol. |
+
+### Docs, scripts and demos
+
+| Path | Description |
+|---|---|
+| [docs/protocol.md](Trabalho%202/docs/protocol.md) | The binary wire protocol in three layers (framing, replication, application). |
+| [docs/T2 - Building Blocks.pdf](Trabalho%202/docs/T2%20-%20Building%20Blocks.pdf) | Assignment brief. |
+| [scripts/start_nodes.sh](Trabalho%202/scripts/start_nodes.sh) | Brings up a local 3-node cluster. |
+| [scripts/run_tests.sh](Trabalho%202/scripts/run_tests.sh) | Runs the test suite. |
+| [scripts/run_tests.py](Trabalho%202/scripts/run_tests.py) | Test suite (10 scenarios). |
+| [scripts/cleanup.sh](Trabalho%202/scripts/cleanup.sh) | Stops the nodes and wipes the test environment. |
+| [slides/apresentacao.pdf](Trabalho%202/slides/apresentacao.pdf) | Presentation slides. |
+| [video_apresentacao.md](Trabalho%202/video_apresentacao.md) | Link to the demo video. |
+
+### Demos
+
+Each script brings up its own cluster, walks through one scenario and tears it all down, so you can run them in any order. They pause on `[ENTER]` between steps; set `NOPAUSE=1` to run straight through.
+
+| Script | Scenario |
+|---|---|
+| [01_normal.sh](Trabalho%202/demo/01_normal.sh) | upload, list, download and delete replicated to all 3 nodes. |
+| [02_concorrencia.sh](Trabalho%202/demo/02_concorrencia.sh) | two clients upload the same name; the leader hands out a deterministic `(1)` suffix. |
+| [03_falha_follower.sh](Trabalho%202/demo/03_falha_follower.sh) | kill a follower; writes still go through; it catches up on return. |
+| [04_falha_lider.sh](Trabalho%202/demo/04_falha_lider.sh) | kill the leader, promote a follower at runtime, writes resume. |
+| [05_snapshot.sh](Trabalho%202/demo/05_snapshot.sh) | wipe a node and rebuild it from a snapshot. |
+
+### Running it
+
+From `Trabalho 2/`, bring up the cluster and run the client:
 
 ```bash
 ./scripts/start_nodes.sh
-```
-
-Then run the client. You pass it the whole node list and it finds the leader on
-its own (it gets redirected if it hits a follower, and skips dead nodes), so you
-never have to know which node is the leader:
-
-```bash
 python3 src/client.py --nodes 127.0.0.1:5050,127.0.0.1:5051,127.0.0.1:5052
 ```
 
-Commands: `upload <local> <remote>`, `download <remote> <local>`, `list`,
-`delete <remote>`, `exit`.
-
-Stop everything and clean up:
-
-```bash
-./scripts/cleanup.sh
-```
-
-## Demos
-
-The [demo/](demo/) directory holds five recorded-demo scripts, one per scenario.
-Each one brings up its own cluster, walks through a single situation, prints the
-state of all three replicas at the end, and tears the cluster back down, so you
-can run them on their own and in any order. They pause on `[ENTER]` between
-steps; set `NOPAUSE=1` to run straight through.
-
-```bash
-./demo/01_normal.sh          # upload / list / download / delete, replicated to all 3 nodes
-./demo/02_concorrencia.sh    # two clients upload the same name; leader hands out a deterministic (1) suffix
-./demo/03_falha_follower.sh  # kill a follower (writes still go through), then it catches up on return
-./demo/04_falha_lider.sh     # kill the leader, promote a follower at runtime, writes resume
-./demo/05_snapshot.sh        # wipe a node and rebuild it from a snapshot
-```
-
-A recorded walkthrough of the demos is on YouTube: https://youtu.be/oFuAaPZYFC0
-
-## Tests
-
-```bash
-./scripts/run_tests.sh
-```
-
-The suite brings up a leader + two followers and checks the full cycle:
-
-1. Synchronous replication: an upload lands identically on all three nodes.
-2. Fault tolerance: kill a follower, writes still go through (Drop Rule).
-3. Catch-up: a restarted follower reconnects and pulls the entries it missed.
-4. Snapshot recovery: a wiped node requests and loads a snapshot, restoring state.
-5. Download: a downloaded file matches the original byte for byte.
-6. Delete replication: a delete propagates to all three replicas.
-7. Concurrent collisions: two clients uploading the same name both survive (no
-   lost update) and the leader hands out a deterministic `(1)` suffix everywhere.
-8. Replica diff: the committed contents of all three nodes are hashed and
-   compared to confirm they're identical.
-9. WRONG_LEADER redirect: a client that contacts a follower gets opcode `0x06`
-   with the leader's `host:port` and reconnects transparently.
-10. Leader failure: kill the leader, flip one surviving follower to leader at
-    runtime (no restart) with the `OP_PROMOTE` command and a higher epoch; the
-    other follower finds the new leader on its own via its peer list, and writes
-    resume.
+Client commands: `upload <local> <remote>`, `download <remote> <local>`, `list`, `delete <remote>`, `exit`. To stop everything and clean up: `./scripts/cleanup.sh`.

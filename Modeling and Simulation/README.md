@@ -4,10 +4,10 @@
 
 **Autores:** Pedro Henrique Gimenez e João Vitor Curcio Sutter
 
-## Trabalho Final — DCS · Tema 6.2: Autômatos Celulares Universais no GenESyS
+Estendi, junto com o Sutter, o simulador de eventos discretos GenESyS com um componente que modela e simula autômatos celulares universais (tema 6.2 do DCS). O GenESyS é um projeto grande em C++, então o código fica no repositório dele, não aqui.
 
-O trabalho estende o simulador de eventos discretos [GenESyS](https://github.com/JVSutter/Genesys-Simulator-cellular-automata) (uma base de código C++ grande) com um componente que modela e simula autômatos celulares universais. Como o simulador em si é um projeto externo enorme, o código fica no repositório próprio, não aqui.
-
-- **Código:** [JVSutter/Genesys-Simulator-cellular-automata](https://github.com/JVSutter/Genesys-Simulator-cellular-automata)
-- **Guia de estudo (site):** [modsim.pehqge.com](https://modsim.pehqge.com)
-- `apresentacao.pdf` — os slides da apresentação
+| Recurso | O que é |
+|---------|---------|
+| [apresentacao.pdf](./apresentacao.pdf) | Slides da apresentação final do trabalho. |
+| [Código: Genesys-Simulator-cellular-automata](https://github.com/JVSutter/Genesys-Simulator-cellular-automata) | Fork do GenESyS com o componente de autômatos celulares. |
+| [Guia de estudo (site)](https://modsim.pehqge.com) | Site com o guia de estudo do trabalho. |

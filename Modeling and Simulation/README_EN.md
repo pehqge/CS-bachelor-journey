@@ -4,10 +4,10 @@
 
 **Authors:** Pedro Henrique Gimenez and João Vitor Curcio Sutter
 
-## Final Project — DCS · Theme 6.2: Universal Cellular Automata in GenESyS
+Together with Sutter, I extended the GenESyS discrete-event simulator with a component that models and simulates universal cellular automata (theme 6.2 of the DCS). GenESyS is a large C++ project, so the code lives in its own repository, not here.
 
-The project extends the [GenESyS](https://github.com/JVSutter/Genesys-Simulator-cellular-automata) discrete-event simulator (a large C++ codebase) with a component that models and simulates universal cellular automata. Because the simulator itself is a big external project, the code lives in its own repository rather than here.
-
-- **Code:** [JVSutter/Genesys-Simulator-cellular-automata](https://github.com/JVSutter/Genesys-Simulator-cellular-automata)
-- **Study guide (site):** [modsim.pehqge.com](https://modsim.pehqge.com)
-- `apresentacao.pdf` — the presentation slides
+| Resource | What it is |
+|----------|------------|
+| [apresentacao.pdf](./apresentacao.pdf) | Final presentation slides. |
+| [Code: Genesys-Simulator-cellular-automata](https://github.com/JVSutter/Genesys-Simulator-cellular-automata) | GenESyS fork with the cellular automata component. |
+| [Study guide (site)](https://modsim.pehqge.com) | Site with the project's study guide. |

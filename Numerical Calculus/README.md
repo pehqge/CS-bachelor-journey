@@ -4,12 +4,10 @@
 
 **Autores:** João Vitor Curcio Sutter e Pedro Henrique Gimenez
 
-Exercícios-programa (EPs) da disciplina de Cálculo Numérico, cobrindo busca de raízes, avaliação de polinômios, resolução de sistemas não lineares e integração numérica de EDOs.
+Estes são os exercícios-programa (EPs) da disciplina de Cálculo Numérico. Cada EP resolve um problema numérico em Python e vem com um relatório. Os temas vão de busca de raízes e avaliação de polinômios a sistemas não lineares e integração de EDOs. As dependências estão em [requirements.txt](requirements.txt) (NumPy e Matplotlib).
 
-| Exercício | Tópico |
-| :-------: | :----- |
-| **EP1** | Método de Muller para raízes e método de Horner para avaliação de polinômios |
-| **EP2** | Método de Newton para sistemas não lineares, com gráficos e análise |
-| **EP3** | Método de Runge-Kutta para equações diferenciais ordinárias |
-
-Cada exercício tem um relatório junto com o código em Python.
+| Exercício | Tópico | Relatório |
+| :-------- | :----- | :-------- |
+| [EP1](EP1) | Método de Muller para raízes e método de Horner para avaliar polinômios. Código em [horner.py](EP1/horner.py) e [muller.py](EP1/muller.py). | [Relatório](EP1/Relatório%20-%20EP1.pdf) |
+| [EP2](EP2) | Método de Newton para sistemas não lineares, com gráficos. Código nas partes [T1](EP2/T1) e [T2](EP2/T2). | [Relatório](EP2/Relatorio%20EP2.ipynb) |
+| [EP3](EP3) | Método de Runge-Kutta para equações diferenciais ordinárias. Código em [runge_kutta.py](EP3/runge_kutta.py). | [Relatório](EP3/Relatorio%20EP3.ipynb) |

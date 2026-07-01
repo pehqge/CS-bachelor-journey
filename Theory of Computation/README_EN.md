@@ -4,6 +4,20 @@
 
 **Team:** Pedro Henrique Gimenez, Rita and Rafael
 
-The submitted work for the Theory of Computation course, covering formal languages, automata and computability.
+This is Assignment 1 of the course. We built finite automata in JFLAP (`.jff` files) and wrote the report.
 
-- `Entregas/` — Assignment I: finite automata built in JFLAP (`.jff` machines) plus the report
+## Assignment 1
+
+| Item | Where | Description |
+|---|---|---|
+| Report | [Trabalho 1/Relatorio.pdf](Trabalho%201/Relatorio.pdf) | Assignment report |
+| Machines | [Trabalho 1/Maquinas](Trabalho%201/Maquinas) | Folder with the JFLAP automata |
+
+## Machines (JFLAP)
+
+| Exercise | File |
+|---|---|
+| 1 a | [1)a.jff](Trabalho%201/Maquinas/1%29a.jff) |
+| 2 a | [2)a.jff](Trabalho%201/Maquinas/2%29a.jff) |
+| 3 a | [3)a.jff](Trabalho%201/Maquinas/3%29a.jff) |
+| 3 b | [3)b.jff](Trabalho%201/Maquinas/3%29b.jff) |
