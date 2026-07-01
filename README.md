@@ -18,6 +18,7 @@ Repository for the programming courses I have taken in the Bachelor’s program 
 |  INE5414  | [Computer Networks I](./Computer%20Networks%20I/) | **4th Semester** - 24.2 |  |
 |  INE5416  | [Programming Paradigms](./Programming%20Paradigms/) | **4th Semester** - 24.2 |  |
 |  INE5452  | [Special Topics in Algorithms II](./Special%20Topics%20in%20Algorithms%20II/) | **4th Semester** - 24.2 |  |
+|  INE5417  | [Software Engineering I](./Software%20Engineering%20I/) | **4th Semester** - 24.2 | [Soma 10](https://github.com/pehqge/soma10) |
 |  INE5405  | [Probability and Statistics](./Probability%20and%20Statistics/) | **5th Semester** - 25.1 | Meteorological data analysis |
 |  INE5420  | [Computer Graphics](./Computer%20Graphics/) | **5th Semester** - 25.1 | [Interactive Graphics System](./Computer%20Graphics/) |
 |  INE5421  | [Formal Languages and Compilers](./Formal%20Languages%20and%20Compilers/) | **6th Semester** - 25.2 | [Lexical & Syntactic Analyzer](./Formal%20Languages%20and%20Compilers/) |

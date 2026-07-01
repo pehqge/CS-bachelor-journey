@@ -4,3 +4,6 @@
 [submodule "Object-Oriented Programming II/Final Project"]
 	path = Object-Oriented Programming II/Final Project
 	url = https://github.com/tmphnt/The-Lost-Key.git
+[submodule "Software Engineering I/soma10"]
+	path = Software Engineering I/soma10
+	url = https://github.com/pehqge/soma10.git
