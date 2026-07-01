@@ -6,4 +6,4 @@
 
 O trabalho entregue na disciplina de Teoria da Computação, cobrindo linguagens formais, autômatos e computabilidade.
 
-- `Entregas (Moodle)/` — Trabalho I: autômatos finitos feitos no JFLAP (máquinas `.jff`) e o relatório
+- `Entregas/` — Trabalho I: autômatos finitos feitos no JFLAP (máquinas `.jff`) e o relatório

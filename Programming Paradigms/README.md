@@ -2,7 +2,7 @@
 
 # INE5416 - Programming Paradigms
 
-Work for the Programming Paradigms course, focused on the functional paradigm with Haskell.
+Work for the Programming Paradigms course, focused on the functional and logic paradigms.
 
-- `haskell exercises/` — exercises solved throughout the course
-- `Trabalho/` — the course assignment
+- `Entregas/` — the graded assignments (Trabalho I, II and IV, including Prolog work)
+- `haskell exercises/` — Haskell exercises solved throughout the course

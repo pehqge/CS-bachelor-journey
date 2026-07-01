@@ -6,4 +6,4 @@
 
 The submitted work for the Theory of Computation course, covering formal languages, automata and computability.
 
-- `Entregas (Moodle)/` — Assignment I: finite automata built in JFLAP (`.jff` machines) plus the report
+- `Entregas/` — Assignment I: finite automata built in JFLAP (`.jff` machines) plus the report

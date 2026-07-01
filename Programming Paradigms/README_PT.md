@@ -2,7 +2,7 @@
 
 # INE5416 - Paradigmas de Programação
 
-Trabalhos da disciplina de Paradigmas de Programação, com foco no paradigma funcional usando Haskell.
+Trabalhos da disciplina de Paradigmas de Programação, com foco nos paradigmas funcional e lógico.
 
-- `haskell exercises/` — exercícios resolvidos ao longo do curso
-- `Trabalho/` — o trabalho da disciplina
+- `Entregas/` — os trabalhos avaliativos (Trabalho I, II e IV, incluindo Prolog)
+- `haskell exercises/` — exercícios em Haskell resolvidos ao longo do curso
