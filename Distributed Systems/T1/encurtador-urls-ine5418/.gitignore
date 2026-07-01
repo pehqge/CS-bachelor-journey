@@ -1,0 +1,35 @@
+# runtime
+logs/
+
+# cache
+.mypy_cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# review interno (artefatos do processo de auditoria)
+.review/
+
+# editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# LaTeX build artifacts
+latex/*.aux
+latex/*.bbl
+latex/*.blg
+latex/*.log
+latex/*.out
+latex/*.toc
+latex/*.lof
+latex/*.lot
+latex/*.fls
+latex/*.fdb_latexmk
+latex/*.synctex.gz
+latex/document.pdf
+latex/*-converted-to.pdf
+latex/missfont.log
+texput.log
+mfput.log

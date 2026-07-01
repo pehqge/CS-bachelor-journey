@@ -1,0 +1,21 @@
+# config do encurtador. KEY=VALOR, # comenta.
+
+# servidor REST
+SERVER_HOST=127.0.0.1
+SERVER_PORT=5000
+SHORT_CODE_LENGTH=6
+PUBLIC_BASE_URL=http://127.0.0.1:5000
+
+# interceptador
+INTERCEPTOR_HOST=127.0.0.1
+INTERCEPTOR_PORT=6000
+
+# cache LRU
+CACHE_MAX_SIZE=64
+# TTL em segundos (0 = só LRU, sem expiração)
+CACHE_TTL_SECONDS=60
+
+# circuit breaker
+CB_FAILURE_THRESHOLD=3
+CB_RESET_TIMEOUT_SECONDS=8
+CB_REQUEST_TIMEOUT=2
