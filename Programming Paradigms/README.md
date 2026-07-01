@@ -1,8 +1,8 @@
-[<kbd><img title="Português" alt="Português" src="https://flagicons.lipis.dev/flags/4x3/br.svg" width="22"></kbd> Versão em português](README_PT.md)
+[<kbd><img title="English" alt="English" src="https://flagicons.lipis.dev/flags/4x3/us.svg" width="22"></kbd> English version](README_EN.md)
 
-# INE5416 - Programming Paradigms
+# INE5416 - Paradigmas de Programação
 
-Work for the Programming Paradigms course, focused on the functional and logic paradigms.
+Trabalhos da disciplina de Paradigmas de Programação, com foco nos paradigmas funcional e lógico.
 
-- `Entregas/` — the graded assignments (Trabalho I, II and IV, including Prolog work)
-- `haskell exercises/` — Haskell exercises solved throughout the course
+- `Entregas/` — os trabalhos avaliativos (Trabalho I, II e IV, incluindo Prolog)
+- `haskell exercises/` — exercícios em Haskell resolvidos ao longo do curso

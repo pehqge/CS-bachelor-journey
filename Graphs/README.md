@@ -1,10 +1,10 @@
-[<kbd><img title="Português" alt="Português" src="https://flagicons.lipis.dev/flags/4x3/br.svg" width="22"></kbd> Versão em português](README_PT.md)
+[<kbd><img title="English" alt="English" src="https://flagicons.lipis.dev/flags/4x3/us.svg" width="22"></kbd> English version](README_EN.md)
 
-# INE5413 - Graphs
+# INE5413 - Grafos
 
-Assignments and code for the Graph Theory course, covering graph representation and traversal, shortest paths, minimum spanning trees, flows and other classic graph algorithms.
+Trabalhos e códigos da disciplina de Grafos, cobrindo representação e percurso de grafos, caminhos mínimos, árvores geradoras mínimas, fluxos e outros algoritmos clássicos.
 
-- `grafos/` — algorithm implementations developed throughout the course
-- `meu grafo/` — the graph library built for the assignments
-- `Anotações Grafos.pdf` — my course notes
-- `prova1.pdf` — first exam
+- `grafos/` — implementações dos algoritmos feitas ao longo do curso
+- `meu grafo/` — a biblioteca de grafos construída para os trabalhos
+- `Anotações Grafos.pdf` — minhas anotações da disciplina
+- `prova1.pdf` — primeira prova

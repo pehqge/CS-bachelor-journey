@@ -1,9 +1,9 @@
-[<kbd><img title="Português" alt="Português" src="https://flagicons.lipis.dev/flags/4x3/br.svg" width="22"></kbd> Versão em português](README_PT.md)
+[<kbd><img title="English" alt="English" src="https://flagicons.lipis.dev/flags/4x3/us.svg" width="22"></kbd> English version](README_EN.md)
 
-# INE5452 - Special Topics in Algorithms II
+# INE5452 - Tópicos Especiais em Algoritmos II
 
-Competitive programming course. The work is organized into problem lists by topic, plus marathon training.
+Disciplina de programação competitiva. Os trabalhos são organizados em listas de problemas por tópico, além de treino de maratona.
 
-- Problem lists: ad hoc, data structures, backtracking, divide and conquer, greedy, dynamic programming, graphs, math (MTM), computational geometry (GC) and strings
-- `maratona/` — programming marathon problems
-- `monitoria/` — tutoring material
+- Listas: ad hoc, estruturas de dados, backtracking, divisão e conquista, gulosos, programação dinâmica, grafos, matemática (MTM), geometria computacional (GC) e strings
+- `maratona/` — problemas de maratona de programação
+- `monitoria/` — material de monitoria

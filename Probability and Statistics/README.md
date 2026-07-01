@@ -1,12 +1,12 @@
-[<kbd><img title="Português" alt="Português" src="https://flagicons.lipis.dev/flags/4x3/br.svg" width="22"></kbd> Versão em português](README_PT.md)
+[<kbd><img title="English" alt="English" src="https://flagicons.lipis.dev/flags/4x3/us.svg" width="22"></kbd> English version](README_EN.md)
 
-# INE5405 - Probability and Statistics
+# INE5405 - Probabilidade e Estatística
 
-**Group:** Pedro Henrique Gimenez, [Beatriz Repette](https://github.com/beatriz-repette), [Diego Meditsch](https://github.com/DMeditsch) and [Tom Hunt](https://github.com/tmphnt)
+**Grupo:** Pedro Henrique Gimenez, [Beatriz Repette](https://github.com/beatriz-repette), [Diego Meditsch](https://github.com/DMeditsch) e [Tom Hunt](https://github.com/tmphnt)
 
-Topics covered include combinatorial analysis, probability, discrete and continuous random variables, parameter estimation and hypothesis testing.
+Os tópicos abordados incluem análise combinatória, probabilidade, variáveis aleatórias discretas e contínuas, estimação de parâmetros e testes de hipóteses.
 
-The two projects are exploratory data analyses over a real meteorological dataset, applying descriptive statistics, probability distributions and statistical inference. Each one has its report (`documento`), the code (`codigos`), the data (`data`) and the generated plots (`imagens`).
+Os dois trabalhos são análises exploratórias sobre um conjunto de dados meteorológicos reais, aplicando estatística descritiva, distribuições de probabilidade e inferência estatística. Cada um tem seu relatório (`documento`), o código (`codigos`), os dados (`data`) e os gráficos gerados (`imagens`).
 
-- **trabalho 1** — first data analysis and report
-- **trabalho 2** — second data analysis, extending the methods
+- **trabalho 1** — primeira análise de dados e relatório
+- **trabalho 2** — segunda análise, estendendo os métodos

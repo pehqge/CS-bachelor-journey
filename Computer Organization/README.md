@@ -1,12 +1,12 @@
-[<kbd><img title="Português" alt="Português" src="https://flagicons.lipis.dev/flags/4x3/br.svg" width="22"></kbd> Versão em português](README_PT.md)
+[<kbd><img title="English" alt="English" src="https://flagicons.lipis.dev/flags/4x3/us.svg" width="22"></kbd> English version](README_EN.md)
 
-# INE5411 - Computer Organization I
+# INE5411 - Organização de Computadores I
 
-Reports and code developed during the Computer Organization I classes. The course covers computer architecture, instruction formats and addressing modes, assembly programming, arithmetic circuits and performance evaluation.
+Relatórios e códigos desenvolvidos durante as aulas da disciplina de Organização de Computadores I. A disciplina cobre arquitetura de computadores, formatos de instrução e modos de endereçamento, programação em assembly, circuitos aritméticos e avaliação de desempenho.
 
-The assembly work was written for MIPS and run on the MARS simulator.
+O trabalho em assembly foi escrito para MIPS e executado no simulador MARS.
 
-- `Entregas/` — the graded labs (MIPS assembly + reports)
-- `Relatórios/` — the lab reports
-- `Aulas/` — in-class work
-- `Estudo Prova/` — exam study material
+- `Entregas/` — os laboratórios avaliativos (assembly MIPS + relatórios)
+- `Relatórios/` — os relatórios dos laboratórios
+- `Aulas/` — trabalhos feitos em aula
+- `Estudo Prova/` — material de estudo para as provas

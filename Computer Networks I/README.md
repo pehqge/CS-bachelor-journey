@@ -1,9 +1,9 @@
-[<kbd><img title="Português" alt="Português" src="https://flagicons.lipis.dev/flags/4x3/br.svg" width="22"></kbd> Versão em português](README_PT.md)
+[<kbd><img title="English" alt="English" src="https://flagicons.lipis.dev/flags/4x3/us.svg" width="22"></kbd> English version](README_EN.md)
 
-# INE5414 - Computer Networks I
+# INE5414 - Redes de Computadores I
 
-Work for the Computer Networks I course, covering the layered model, protocols and network programming.
+Trabalhos da disciplina de Redes de Computadores I, cobrindo o modelo de camadas, protocolos e programação de redes.
 
-- `Exercícios.pdf` — solved exercise list
-- `Pratico2/` — the second practical assignment
-- `Trabalho 1 - Vídeo/` — the first assignment (a recorded video presentation)
+- `Exercícios.pdf` — lista de exercícios resolvida
+- `Pratico2/` — o segundo trabalho prático
+- `Trabalho 1 - Vídeo/` — o primeiro trabalho (uma apresentação em vídeo)

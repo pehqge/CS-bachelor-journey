@@ -1,16 +1,16 @@
-[<kbd><img title="Português" alt="Português" src="https://flagicons.lipis.dev/flags/4x3/br.svg" width="22"></kbd> Versão em português](README_PT.md)
+[<kbd><img title="English" alt="English" src="https://flagicons.lipis.dev/flags/4x3/us.svg" width="22"></kbd> English version](README_EN.md)
 
-# INE5431 - Multimedia Systems
+# INE5431 - Sistemas Multimídia
 
-**Team:** Pedro Henrique Gimenez and Tom Pereira Hunt
+**Equipe:** Pedro Henrique Gimenez e Tom Pereira Hunt
 
-The practical assignments submitted for the Multimedia Systems course, covering digital media processing in Python.
+As práticas entregues na disciplina de Sistemas Multimídia, cobrindo processamento de mídia digital em Python.
 
-| Assignment | Topic |
-| :--------: | :---- |
-| **Prática I** | Written answers |
-| **Prática II** | Image manipulation with Python |
-| **Prática III** | Python code + report |
-| **Prática IV** | Python code + report |
+| Prática | Tópico |
+| :-----: | :----- |
+| **Prática I** | Respostas |
+| **Prática II** | Manipulação de imagens com Python |
+| **Prática III** | Código Python + relatório |
+| **Prática IV** | Código Python + relatório |
 
-Each practical has its code and, when applicable, a report (`RELATORIO.md`).
+Cada prática tem seu código e, quando aplicável, um relatório (`RELATORIO.md`).

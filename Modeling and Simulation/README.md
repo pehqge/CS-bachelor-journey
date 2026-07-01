@@ -1,13 +1,13 @@
-[<kbd><img title="Português" alt="Português" src="https://flagicons.lipis.dev/flags/4x3/br.svg" width="22"></kbd> Versão em português](README_PT.md)
+[<kbd><img title="English" alt="English" src="https://flagicons.lipis.dev/flags/4x3/us.svg" width="22"></kbd> English version](README_EN.md)
 
-# INE5425 - Modeling and Simulation
+# INE5425 - Modelagem e Simulação
 
-**Authors:** Pedro Henrique Gimenez and João Vitor Curcio Sutter
+**Autores:** Pedro Henrique Gimenez e João Vitor Curcio Sutter
 
-## Final Project — DCS · Theme 6.2: Universal Cellular Automata in GenESyS
+## Trabalho Final — DCS · Tema 6.2: Autômatos Celulares Universais no GenESyS
 
-The project extends the [GenESyS](https://github.com/JVSutter/Genesys-Simulator-cellular-automata) discrete-event simulator (a large C++ codebase) with a component that models and simulates universal cellular automata. Because the simulator itself is a big external project, the code lives in its own repository rather than here.
+O trabalho estende o simulador de eventos discretos [GenESyS](https://github.com/JVSutter/Genesys-Simulator-cellular-automata) (uma base de código C++ grande) com um componente que modela e simula autômatos celulares universais. Como o simulador em si é um projeto externo enorme, o código fica no repositório próprio, não aqui.
 
-- **Code:** [JVSutter/Genesys-Simulator-cellular-automata](https://github.com/JVSutter/Genesys-Simulator-cellular-automata)
-- **Study guide (site):** [modsim.pehqge.com](https://modsim.pehqge.com)
-- `apresentacao.pdf` — the presentation slides
+- **Código:** [JVSutter/Genesys-Simulator-cellular-automata](https://github.com/JVSutter/Genesys-Simulator-cellular-automata)
+- **Guia de estudo (site):** [modsim.pehqge.com](https://modsim.pehqge.com)
+- `apresentacao.pdf` — os slides da apresentação

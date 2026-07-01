@@ -1,9 +1,9 @@
-[<kbd><img title="Português" alt="Português" src="https://flagicons.lipis.dev/flags/4x3/br.svg" width="22"></kbd> Versão em português](README_PT.md)
+[<kbd><img title="English" alt="English" src="https://flagicons.lipis.dev/flags/4x3/us.svg" width="22"></kbd> English version](README_EN.md)
 
-# INE5415 - Theory of Computation
+# INE5415 - Teoria da Computação
 
-**Team:** Pedro Henrique Gimenez, Rita and Rafael
+**Equipe:** Pedro Henrique Gimenez, Rita e Rafael
 
-The submitted work for the Theory of Computation course, covering formal languages, automata and computability.
+O trabalho entregue na disciplina de Teoria da Computação, cobrindo linguagens formais, autômatos e computabilidade.
 
-- `Entregas/` — Assignment I: finite automata built in JFLAP (`.jff` machines) plus the report
+- `Entregas/` — Trabalho I: autômatos finitos feitos no JFLAP (máquinas `.jff`) e o relatório

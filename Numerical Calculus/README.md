@@ -1,15 +1,15 @@
-[<kbd><img title="Português" alt="Português" src="https://flagicons.lipis.dev/flags/4x3/br.svg" width="22"></kbd> Versão em português](README_PT.md)
+[<kbd><img title="English" alt="English" src="https://flagicons.lipis.dev/flags/4x3/us.svg" width="22"></kbd> English version](README_EN.md)
 
-# INE5202 - Numerical Calculus in Computers
+# INE5202 - Cálculo Numérico em Computadores
 
-**Authors:** João Vitor Curcio Sutter and Pedro Henrique Gimenez
+**Autores:** João Vitor Curcio Sutter e Pedro Henrique Gimenez
 
-Programming exercises (EPs) for the Numerical Calculus course, covering root finding, polynomial evaluation, solving nonlinear systems and numerical integration of ODEs.
+Exercícios-programa (EPs) da disciplina de Cálculo Numérico, cobrindo busca de raízes, avaliação de polinômios, resolução de sistemas não lineares e integração numérica de EDOs.
 
-| Exercise | Topic |
-| :------: | :---- |
-| **EP1** | Muller's method for finding roots and Horner's method for polynomial evaluation |
-| **EP2** | Newton's method for nonlinear systems, with graphs and analysis |
-| **EP3** | Runge-Kutta method for ordinary differential equations |
+| Exercício | Tópico |
+| :-------: | :----- |
+| **EP1** | Método de Muller para raízes e método de Horner para avaliação de polinômios |
+| **EP2** | Método de Newton para sistemas não lineares, com gráficos e análise |
+| **EP3** | Método de Runge-Kutta para equações diferenciais ordinárias |
 
-Each exercise has a report (`Relatório`) alongside the Python code.
+Cada exercício tem um relatório junto com o código em Python.

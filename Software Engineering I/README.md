@@ -1,13 +1,13 @@
-[<kbd><img title="Português" alt="Português" src="https://flagicons.lipis.dev/flags/4x3/br.svg" width="22"></kbd> Versão em português](README_PT.md)
+[<kbd><img title="English" alt="English" src="https://flagicons.lipis.dev/flags/4x3/us.svg" width="22"></kbd> English version](README_EN.md)
 
-# INE5417 - Software Engineering I
+# INE5417 - Engenharia de Software I
 
-The course followed the full software engineering process, from requirements to a working implementation, applied to a board game.
+A disciplina seguiu todo o processo de engenharia de software, dos requisitos até uma implementação funcional, aplicado a um jogo de tabuleiro.
 
-## Final Project — Soma 10
+## Trabalho Final — Soma 10
 
-**Soma 10** is a two-player board game on 16 interconnected squares, where the goal is to collect the most pieces by making sums that add up to 10. The project includes the requirements specification, the UML modeling and the implementation.
+O **Soma 10** é um jogo de tabuleiro para dois jogadores em 16 casas interligadas, cujo objetivo é conseguir o maior número de fichas fazendo somas que resultem em 10. O projeto inclui a especificação de requisitos, a modelagem UML e a implementação.
 
-The game is kept in its own repository as a submodule ([soma10](https://github.com/pehqge/soma10)); `doc/` holds the requirements specification and the Visual Paradigm models.
+O jogo fica no próprio repositório como submodule ([soma10](https://github.com/pehqge/soma10)); a pasta `doc/` tem a especificação de requisitos e os modelos do Visual Paradigm.
 
-`Cronograma.pdf` is the course schedule.
+`Cronograma.pdf` é o cronograma da disciplina.

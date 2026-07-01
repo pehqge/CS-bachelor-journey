@@ -1,12 +1,12 @@
-[<kbd><img title="Português" alt="Português" src="https://flagicons.lipis.dev/flags/4x3/br.svg" width="22"></kbd> Versão em português](README_PT.md)
+[<kbd><img title="English" alt="English" src="https://flagicons.lipis.dev/flags/4x3/us.svg" width="22"></kbd> English version](README_EN.md)
 
-# INE5423 - Database I
+# INE5423 - Banco de Dados I
 
-The final project for the course, built in the same order a real database is designed:
+O trabalho final da disciplina, feito na mesma ordem em que um banco de dados real é projetado:
 
-1. **Data Requirements** — what the system needs to store and the rules it must follow.
-2. **Conceptual Modeling** — the entity-relationship model.
-3. **Logical Modeling** — the relational schema derived from the conceptual model.
-4. **Code** — the SQL implementation: `01_schema.sql` (tables and constraints) and `02_sample_data.sql` (sample data).
+1. **Requisitos de Dados** — o que o sistema precisa armazenar e as regras que deve seguir.
+2. **Modelagem Conceitual** — o modelo entidade-relacionamento.
+3. **Modelagem Lógica** — o esquema relacional derivado do modelo conceitual.
+4. **Código** — a implementação em SQL: `01_schema.sql` (tabelas e restrições) e `02_sample_data.sql` (dados de exemplo).
 
-Each step has its own document, so the project can be read from requirements all the way down to the running schema.
+Cada etapa tem seu próprio documento, então o trabalho pode ser lido dos requisitos até o esquema final rodando.
