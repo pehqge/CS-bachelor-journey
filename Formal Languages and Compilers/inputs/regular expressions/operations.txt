@@ -1,0 +1,9 @@
+num: [0-9]
+letter: [a-zA-Z]
+num_int: (\-)?.num+
+num_float: (\-)?.num+.,.num+
+id: letter.(num|letter)*
++: \+
+*: \*
+-: \-
+/: \/

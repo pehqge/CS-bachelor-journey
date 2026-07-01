@@ -1,0 +1,8 @@
+or: or
+and: and
+not: not
+true: true
+false: false
+(: \(
+): \)
+variable: [a-zA-Z_][a-zA-Z0-9_]*

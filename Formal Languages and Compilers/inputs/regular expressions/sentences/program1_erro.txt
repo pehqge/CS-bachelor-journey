@@ -1,0 +1,36 @@
+const interio max = 5 ;
+const real fator = 2.5 ;
+
+var i , n : inteiro ;
+var arr : vetor [ max ] de inteiro ;
+var nome : cadeia [ 30 ] ;
+
+proc preenche ( val tam : inteiro ) ;
+    var idx : inteiro ;
+    inicio
+        idx := 0 ;
+        enquanto idx < tam faca
+            inicio
+                arr [ idx ] := idx * 2 ;
+                idx := idx + 1
+            fim ;
+    fim ;
+
+proc imprime_array ( val tam : inteiro ) ;
+    var j : inteiro ;
+    inicio
+        j := 0 ;
+        enquanto j < tam faca
+            inicio
+                escreva ( arr [ j ] ) ;
+                j := j + 1
+            fim ;
+    fim ;
+
+inicio
+    n := max ;
+    preenche ( n ) ;
+    escreva ( "Pronto" ) ;
+    imprime_array ( n ) ;
+    leia ( i ) ;
+fim .

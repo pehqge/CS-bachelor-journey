@@ -1,0 +1,20 @@
+var n , resultado : inteiro ;
+
+proc fatorial ( val n : inteiro ; ref res : inteiro ) ;
+    var i , aux : inteiro ;
+    inicio
+        aux := 1 ;
+        i := 1 ;
+        enquanto i <= n faca
+            inicio
+                aux := aux * i ;
+                i := i + 1
+            fim ;
+        res := aux
+    fim ;
+
+inicio
+    leia ( n ) ;
+    fatorial ( n , resultado ) ;
+    escreva ( resultado ) ;
+fim .

@@ -1,0 +1,8 @@
+Resumo Estatístico (originais e transformados):
+
+                       min         max  25th_percentile      mean   median  75th_percentile    std_dev         variance
+area                  0.01   443909.59           530.93   6718.47  2036.25          6509.35   14196.86     201550964.01
+sqrt_area             0.09      666.27            23.04     60.99    45.12            80.68      54.76          2998.83
+volume                1.24 51758998.04          1971.38 186290.76 11029.39         47029.95 1522254.50 2317258776419.39
+cube_root_volume      1.07      372.67            12.54     29.38    22.26            36.10      28.57           816.23
+Object Begin Date -8000.00     2021.00          1347.75   1377.46  1695.00          1868.00     817.07        667606.57

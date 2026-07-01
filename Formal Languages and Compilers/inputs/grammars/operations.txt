@@ -1,0 +1,4 @@
+<expressao> ::= <expressao> + <termo> | <expressao> - <termo> | <termo>
+<termo> ::= <termo> * <fator> | <termo> / <fator> | <fator>
+<fator> ::= ( <expressao> ) | - <fator> | + <fator> | <valor>
+<valor> ::= id | num_int | num_real

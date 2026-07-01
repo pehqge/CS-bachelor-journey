@@ -9,6 +9,12 @@ Repository for the programming courses I have taken in the Bachelor’s program 
 | :-------: | :----------------------------: | :------------: | :-----------: |
 |  INE5402  | [Object-Oriented Programming I](./Object-Oriented%20Programming%20I/) | **1st Semester** - 23.1 | [Misture Meu Chá!](https://github.com/pehqge/Misture-Meu-Cha) |
 |  INE5403  | Discrete Mathematics | **1st Semester** - 23.1 | [Post-quantum cryptography post](https://www.instagram.com/p/CuhyapYRquF/?img_index=1) |
-|  EEL5105  | [Digital Circuits and Techniques](https://github.com/pehqge/UFSC/tree/main/Circuitos%20Digitais) | **1st Semester** - 23.1 | [Memory Game - FPGA](https://github.com/pehqge/UFSC/tree/main/Circuitos%20Digitais/Trabalho%20Final%20da%20Disciplina)
-|  INE5404  | [Object-Oriented Programming II](./Object-Oriented%20Programming%20II/) | **2nd Semester** - 23.2 | [The Lost Key](https://github.com/pehqge/the-lost-key) |
-|  INE5406  | [Digital Systems](https://github.com/pehqge/UFSC/tree/main/Sistemas%20Digitais) | **2nd Semester** - 23.2 |  |
+|  EEL5105  | [Digital Circuits and Techniques](./Circuitos%20Digitais/) | **1st Semester** - 23.1 | [Memory Game - FPGA](./Circuitos%20Digitais/Trabalho%20Final%20da%20Disciplina) |
+|  INE5404  | [Object-Oriented Programming II](./Object-Oriented%20Programming%20II/) | **2nd Semester** - 23.2 | [The Lost Key](https://github.com/tmphnt/The-Lost-Key) |
+|  INE5406  | [Digital Systems](./Sistemas%20Digitais/) | **2nd Semester** - 23.2 |  |
+|  INE5202  | [Numerical Calculus](./Numerical%20Calculus/) | **3rd Semester** - 24.1 |  |
+|  INE5405  | [Probability and Statistics](./Probability%20and%20Statistics/) | **5th Semester** - 25.1 | Meteorological data analysis |
+|  INE5420  | [Computer Graphics](./Computer%20Graphics/) | **5th Semester** - 25.1 | [Interactive Graphics System](./Computer%20Graphics/) |
+|  INE5421  | [Formal Languages and Compilers](./Formal%20Languages%20and%20Compilers/) | **6th Semester** - 25.2 | [Lexical & Syntactic Analyzer](./Formal%20Languages%20and%20Compilers/) |
+|  INE5423  | [Database I](./Database%20I/) | **6th Semester** - 25.2 |  |
+|  INE5418  | [Distributed Systems](./Distributed%20Systems/) | **7th Semester** - 26.1 | [Distributed Filesystem (SMR)](./Distributed%20Systems/) |

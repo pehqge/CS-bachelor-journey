@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema de Arquivos Distribuído via SMR - Seminário INE5418</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --font-display:'Space Grotesk', system-ui, sans-serif;
+  --font-sans:'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono:'IBM Plex Mono', ui-monospace, monospace;
+
+  --bg:#0d1014;
+  --bg-grad:#11151b;
+  --surface:#161b22;
+  --surface-2:#1b212b;
+  --surface-3:#212a35;
+  --border:#283039;
+  --border-soft:#20272f;
+  --text:#e8eef4;
+  --text-dim:#9fb0c0;
+  --text-dimmer:#7e8b99;
+
+  --accent:#3ddc97;
+  --accent-press:#33c386;
+  --accent-soft:rgba(61,220,151,.12);
+  --accent-line:rgba(61,220,151,.32);
+  --on-accent:#06150e;
+
+  --client:#9aa6b4;        --client-bg:rgba(154,166,180,.13);
+  --leader:#f6b24c;        --leader-bg:rgba(246,178,76,.13);
+  --replica:#6ea8fe;       --replica-bg:rgba(110,168,254,.13);
+  --danger:#ff6b6b;        --danger-bg:rgba(255,107,107,.12);
+  --warn:#f6b24c;          --warn-bg:rgba(246,178,76,.12);
+
+  --r-card:16px;
+  --r-chip:8px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --shadow:0 24px 60px rgba(0,0,0,.45), 0 2px 10px rgba(0,0,0,.3);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:var(--font-sans);
+  background:
+    radial-gradient(1200px 700px at 75% -10%, rgba(61,220,151,.06), transparent 60%),
+    radial-gradient(900px 600px at 10% 110%, rgba(110,168,254,.05), transparent 55%),
+    linear-gradient(180deg, var(--bg-grad), var(--bg));
+  color:var(--text);
+  overflow:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* fixed grain/vignette overlay */
+.vignette{position:fixed;inset:0;pointer-events:none;z-index:60;
+  background:radial-gradient(120% 120% at 50% 50%, transparent 62%, rgba(0,0,0,.42));}
+
+/* ---------- deck / slide system ---------- */
+.deck{position:fixed;inset:0}
+.slide{
+  position:absolute;inset:0;
+  display:none;
+  padding:clamp(28px,5vh,64px) clamp(28px,6vw,110px);
+  flex-direction:column;
+  justify-content:center;
+}
+.slide.active{display:flex}
+.slide-inner{
+  width:100%;max-width:1280px;margin:0 auto;
+  display:flex;flex-direction:column;gap:clamp(14px,2.6vh,30px);
+}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(20px);
+  transition:opacity .62s var(--ease), transform .62s var(--ease);
+  transition-delay:calc(var(--i,0) * 95ms + 120ms);}
+.slide.active .reveal{opacity:1;transform:none}
+
+/* ---------- chrome ---------- */
+.topbar{position:fixed;top:0;left:0;right:0;height:56px;z-index:40;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(20px,4vw,42px);
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;color:var(--text-dimmer);}
+.topbar .brand{display:flex;align-items:center;gap:10px}
+.topbar .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent-line)}
+.topbar .topic{color:var(--text-dim)}
+
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);
+  box-shadow:0 0 14px var(--accent-line);z-index:50;transition:width .5s var(--ease);width:0}
+
+.controls{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:40;
+  display:flex;align-items:center;gap:14px;
+  padding:8px 12px;border:1px solid var(--border);border-radius:999px;
+  background:rgba(22,27,34,.72);backdrop-filter:blur(12px);}
+.controls button{
+  width:34px;height:34px;border-radius:50%;border:1px solid var(--border);
+  background:var(--surface-2);color:var(--text-dim);cursor:pointer;
+  font-size:15px;display:grid;place-items:center;transition:.18s var(--ease);font-family:var(--font-sans);}
+.controls button:hover{color:var(--text);border-color:var(--accent-line);transform:translateY(-1px)}
+.controls button:active{transform:scale(.94)}
+.counter{font-family:var(--font-mono);font-size:12.5px;color:var(--text-dim);min-width:52px;text-align:center;letter-spacing:.05em}
+.counter b{color:var(--text)}
+
+.dots{position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:40;
+  display:flex;flex-direction:column;gap:9px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--border);cursor:pointer;transition:.22s var(--ease)}
+.dots i.on{background:var(--accent);transform:scale(1.45);box-shadow:0 0 10px var(--accent-line)}
+
+.navzone{position:fixed;top:56px;bottom:56px;width:13%;z-index:30;cursor:pointer}
+.navzone.left{left:0}.navzone.right{right:0}
+
+.khint{position:fixed;bottom:20px;right:24px;z-index:40;font-family:var(--font-mono);
+  font-size:11px;color:var(--text-dimmer);opacity:.7}
+.kbd{display:inline-block;padding:1px 6px;border:1px solid var(--border);border-radius:5px;
+  background:var(--surface-2);color:var(--text-dim);margin:0 1px}
+
+/* ---------- typography ---------- */
+.eyebrow{font-family:var(--font-mono);font-size:clamp(11px,1.2vw,13px);
+  letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:500}
+h1.title{font-family:var(--font-display);font-weight:700;line-height:1.02;letter-spacing:-.02em;
+  font-size:clamp(34px,5.6vw,72px)}
+h2.head{font-family:var(--font-display);font-weight:600;line-height:1.05;letter-spacing:-.015em;
+  font-size:clamp(28px,4.4vw,54px)}
+.lead{font-size:clamp(15px,1.7vw,21px);color:var(--text-dim);line-height:1.5;max-width:62ch;font-weight:300}
+.kicker{font-family:var(--font-display);font-weight:600;font-size:clamp(17px,1.9vw,23px);letter-spacing:-.01em}
+.muted{color:var(--text-dim)}
+.mono{font-family:var(--font-mono)}
+.accent{color:var(--accent)}
+strong{font-weight:600;color:var(--text)}
+
+.slide-num{font-family:var(--font-mono);font-size:13px;color:var(--text-dimmer);letter-spacing:.1em}
+
+/* ---------- generic pieces ---------- */
+.grid{display:grid;gap:clamp(12px,1.6vw,20px)}
+.g2{grid-template-columns:1fr 1fr}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);
+  padding:clamp(16px,1.8vw,24px);box-shadow:var(--shadow)}
+.card.flat{box-shadow:none;background:var(--surface-2)}
+.card .ctitle{font-family:var(--font-display);font-weight:600;font-size:clamp(16px,1.7vw,20px);margin-bottom:8px;display:flex;align-items:center;gap:9px}
+.card .cbody{color:var(--text-dim);font-size:clamp(13.5px,1.35vw,16px);line-height:1.5;font-weight:300}
+
+.chip{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:12.5px;
+  padding:5px 11px;border-radius:var(--r-chip);border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim)}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11.5px;
+  letter-spacing:.04em;padding:3px 9px;border-radius:999px;font-weight:500}
+.tag.leader{color:var(--leader);background:var(--leader-bg);border:1px solid rgba(246,178,76,.3)}
+.tag.replica{color:var(--replica);background:var(--replica-bg);border:1px solid rgba(110,168,254,.3)}
+.tag.client{color:var(--client);background:var(--client-bg);border:1px solid rgba(154,166,180,.3)}
+.tag.danger{color:var(--danger);background:var(--danger-bg);border:1px solid rgba(255,107,107,.3)}
+
+.swatch{width:11px;height:11px;border-radius:3px;flex:none}
+.s-leader{background:var(--leader)}.s-replica{background:var(--replica)}.s-client{background:var(--client)}.s-accent{background:var(--accent)}
+
+/* node diagram */
+.node{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.node .disc{width:clamp(58px,6.5vw,84px);height:clamp(58px,6.5vw,84px);border-radius:22px;
+  display:grid;place-items:center;font-family:var(--font-mono);font-weight:600;
+  font-size:clamp(12px,1.3vw,15px);border:1.5px solid;position:relative}
+.node .lbl{font-family:var(--font-mono);font-size:11.5px;color:var(--text-dimmer)}
+.disc.leader{background:var(--leader-bg);border-color:var(--leader);color:var(--leader)}
+.disc.replica{background:var(--replica-bg);border-color:var(--replica);color:var(--replica)}
+.disc.client{background:var(--client-bg);border-color:var(--client);color:var(--client)}
+
+/* numbered steps */
+.steps{display:flex;flex-direction:column;gap:11px}
+.step{display:flex;gap:15px;align-items:flex-start}
+.step .num{flex:none;width:34px;height:34px;border-radius:11px;display:grid;place-items:center;
+  font-family:var(--font-mono);font-weight:600;font-size:15px;
+  background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent-line)}
+.step .txt{font-size:clamp(13.5px,1.4vw,16.5px);line-height:1.45;padding-top:5px;color:var(--text-dim)}
+.step .txt b{color:var(--text)}
+
+/* callout */
+.callout{display:flex;gap:13px;align-items:flex-start;padding:15px 18px;border-radius:13px;
+  background:var(--accent-soft);border:1px solid var(--accent-line)}
+.callout .bar{width:3px;align-self:stretch;border-radius:3px;background:var(--accent);flex:none}
+.callout.warn{background:var(--warn-bg);border-color:rgba(246,178,76,.3)}
+.callout.warn .bar{background:var(--warn)}
+.callout p{font-size:clamp(13.5px,1.4vw,16.5px);line-height:1.45;color:var(--text-dim)}
+.callout p b{color:var(--text)}
+
+/* byte layout */
+.bytes{display:flex;gap:6px;flex-wrap:wrap;align-items:stretch}
+.byte-seg{border-radius:11px;border:1px solid;padding:13px 16px;display:flex;flex-direction:column;gap:5px;min-width:0;position:relative}
+.byte-seg .bsz{font-family:var(--font-mono);font-size:11px;color:var(--text-dimmer);letter-spacing:.05em}
+.byte-seg .bname{font-family:var(--font-display);font-weight:600;font-size:clamp(13px,1.4vw,16px)}
+.byte-seg .bsub{font-family:var(--font-mono);font-size:11px;color:var(--text-dim)}
+.seg-frame{background:var(--surface-2);border-color:var(--border);flex:0 0 auto}
+.seg-epoch{background:var(--leader-bg);border-color:rgba(246,178,76,.35);flex:1}
+.seg-seq{background:var(--replica-bg);border-color:rgba(110,168,254,.35);flex:1}
+.seg-op{background:var(--accent-soft);border-color:var(--accent-line);flex:0 0 auto}
+.seg-pay{background:var(--surface);border-color:var(--border);flex:2.4}
+.brace{font-family:var(--font-mono);font-size:11px;color:var(--text-dimmer);text-align:center;letter-spacing:.04em}
+
+/* opcode table */
+.ops{display:flex;flex-direction:column;gap:6px}
+.op{display:flex;align-items:center;gap:12px;padding:7px 12px;border-radius:9px;background:var(--surface-2);border:1px solid var(--border-soft)}
+.op code{font-family:var(--font-mono);font-size:13px;color:var(--accent);flex:none;width:46px}
+.op .onm{font-family:var(--font-mono);font-size:12.5px;color:var(--text);font-weight:500;flex:none;width:148px}
+.op .od{font-size:12.5px;color:var(--text-dimmer);font-weight:300}
+
+/* terminal mock */
+.term{background:#0b0e12;border:1px solid var(--border);border-radius:13px;overflow:hidden;box-shadow:var(--shadow);font-family:var(--font-mono)}
+.term .bar{display:flex;align-items:center;gap:7px;padding:10px 14px;border-bottom:1px solid var(--border);background:var(--surface)}
+.term .bar i{width:11px;height:11px;border-radius:50%}
+.term .bar i:nth-child(1){background:#ff5f57}.term .bar i:nth-child(2){background:#febc2e}.term .bar i:nth-child(3){background:#28c840}
+.term .bar span{margin-left:8px;font-size:11.5px;color:var(--text-dimmer)}
+.term .body{padding:16px 18px;font-size:clamp(12px,1.25vw,14px);line-height:1.85}
+.term .ln{white-space:pre-wrap}
+.term .pmt{color:var(--accent)}
+.term .out{color:var(--text-dim)}
+.term .ok{color:var(--accent)}
+
+.arrow{display:flex;align-items:center;justify-content:center;color:var(--text-dimmer);font-size:20px}
+
+.footer-meta{display:flex;gap:18px;flex-wrap:wrap;align-items:center;font-family:var(--font-mono);font-size:12.5px;color:var(--text-dimmer)}
+
+ul.clean{list-style:none;display:flex;flex-direction:column;gap:9px}
+ul.clean li{display:flex;gap:11px;align-items:flex-start;font-size:clamp(13.5px,1.4vw,16.5px);line-height:1.45;color:var(--text-dim)}
+ul.clean li .mk{color:var(--accent);font-family:var(--font-mono);flex:none;padding-top:2px}
+ul.clean li b{color:var(--text)}
+
+.bignum{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1;letter-spacing:-.02em}
+.bignum.leader{color:var(--leader)}.bignum.replica{color:var(--replica)}.bignum.accent{color:var(--accent)}
+
+@media (max-width:860px){
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .dots,.khint{display:none}
+  .op .onm{width:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{transition:none;opacity:1;transform:none}
+  .progress{transition:none}
+}
+/* capture mode: hide live nav chrome for static export */
+body.capture .controls,
+body.capture .dots,
+body.capture .khint,
+body.capture .navzone{display:none !important}
+
+/* ---------- static export (one page per slide, for PDF) ---------- */
+@media print{ @page{ size:1280px 720px; margin:0; } }
+body.export{overflow:visible;height:auto;background:var(--bg);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body.export .vignette,
+body.export .topbar,
+body.export .progress,
+body.export .controls,
+body.export .dots,
+body.export .khint,
+body.export .navzone{display:none !important}
+body.export .deck{position:static;inset:auto}
+body.export .slide{
+  position:relative !important;inset:auto !important;display:flex !important;
+  width:1280px;height:720px;margin:0 auto;overflow:hidden;
+  padding-top:76px !important;padding-bottom:48px !important;
+  page-break-after:always;break-after:page;
+  /* keep the subtle corner glow per page (vector radial gradients print fine) */
+  background:
+    radial-gradient(1200px 700px at 75% -10%, rgba(61,220,151,.06), transparent 60%),
+    radial-gradient(900px 600px at 10% 110%, rgba(110,168,254,.05), transparent 55%),
+    linear-gradient(180deg, var(--bg-grad), var(--bg));
+}
+body.export .slide:last-child{page-break-after:auto;break-after:auto}
+/* Chrome's print rasterizer turns large blurred box-shadows into hard
+   translucent black rectangles. Cards/terminals keep their solid fill + border,
+   so just drop the shadows for the static export. */
+body.export .card,
+body.export .term{box-shadow:none !important}
+/* keep multi-column grids in the static export (print viewport can be narrow
+   enough to trigger the responsive single-column fallback otherwise) */
+body.export .g2{grid-template-columns:1fr 1fr !important}
+body.export .g3{grid-template-columns:repeat(3,1fr) !important}
+body.export .g4{grid-template-columns:repeat(4,1fr) !important}
+body.export .reveal{opacity:1 !important;transform:none !important;transition:none !important}
+body.export .ptop{position:absolute;top:0;left:0;right:0;height:56px;z-index:6;
+  display:flex;align-items:center;justify-content:space-between;padding:0 42px;
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;color:var(--text-dimmer)}
+body.export .ptop .b{display:flex;align-items:center;gap:10px}
+body.export .ptop .d{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent-line)}
+body.export .ptop .t{color:var(--text-dim)}
+body.export .pbar{position:absolute;top:0;left:0;height:3px;z-index:7;background:var(--accent);box-shadow:0 0 14px var(--accent-line)}
+</style>
+</head>
+<body>
+<div class="vignette"></div>
+<div class="progress" id="progress"></div>
+
+<div class="topbar">
+  <div class="brand"><span class="dot"></span><span>INE5418 · Computação Distribuída</span></div>
+  <div class="topic" id="topic">Capa</div>
+</div>
+
+<div class="navzone left"  onclick="go(cur-1)"></div>
+<div class="navzone right" onclick="go(cur+1)"></div>
+
+<div class="deck" id="deck">
+
+  <!-- 1 · CAPA -->
+  <section class="slide" data-topic="Capa">
+    <div class="slide-inner" style="gap:clamp(18px,3vh,34px)">
+      <div class="eyebrow reveal" style="--i:0">Trabalho 2 · Building Blocks · Grupo 17 · Tema: Replicação</div>
+      <h1 class="title reveal" style="--i:1">Sistema de Arquivos<br>Distribuído via <span class="accent">SMR</span></h1>
+      <p class="lead reveal" style="--i:2">Um building block genérico de Replicação de Máquina de Estados (SMR): consistência forte e tolerância a falhas, sem depender da aplicação que roda em cima dele.</p>
+      <div class="footer-meta reveal" style="--i:3;margin-top:8px">
+        <span>Gustavo Rodrigues Alves D'Angelo</span><span class="muted">·</span>
+        <span>Tom Pereira Hunt</span><span class="muted">·</span>
+        <span>Pedro Henrique Gimenez</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · PROBLEMA -->
+  <section class="slide" data-topic="O problema">
+    <div class="slide-inner">
+      <div class="eyebrow reveal" style="--i:0">Motivação</div>
+      <h2 class="head reveal" style="--i:1">Desafios da replicação consistente</h2>
+      <p class="lead reveal" style="--i:2">Replicar dados em vários servidores parece simples. Mas sob concorrência e falha, três problemas aparecem ao mesmo tempo.</p>
+      <div class="grid g3" style="margin-top:6px">
+        <div class="card reveal" style="--i:3">
+          <div class="ctitle"><span class="swatch s-replica" style="width:13px;height:13px"></span>Concorrência</div>
+          <div class="cbody">Dois clientes escrevem ao mesmo tempo. Sem ordenação, as operações se intercalam e cada réplica termina diferente.</div>
+        </div>
+        <div class="card reveal" style="--i:4">
+          <div class="ctitle"><span class="swatch s-leader" style="width:13px;height:13px"></span>Falhas parciais</div>
+          <div class="cbody">Um nó cai no meio de uma escrita. Os outros não sabem se ele aplicou ou não. O cluster pode travar esperando.</div>
+        </div>
+        <div class="card reveal" style="--i:5">
+          <div class="ctitle"><span class="swatch s-client" style="width:13px;height:13px"></span>Assincronia</div>
+          <div class="cbody">Sem relógio global: as mensagens atrasam e chegam fora de ordem, então "antes" e "depois" deixam de ser óbvios.</div>
+        </div>
+      </div>
+      <div class="callout warn reveal" style="--i:6">
+        <span class="bar"></span>
+        <p>Quando esse controle falha, surgem <b>split-brain</b>, logs divergentes e escritas conflitantes que corrompem o estado global. O objetivo do trabalho é um mecanismo genérico de <b>consistência forte</b>, desacoplado da aplicação.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · SOLUÇÃO SMR -->
+  <section class="slide" data-topic="Modelo SMR">
+    <div class="slide-inner">
+      <div class="eyebrow reveal" style="--i:0">O building block</div>
+      <h2 class="head reveal" style="--i:1">Replicação de Máquina de Estados</h2>
+      <div class="card flat reveal" style="--i:2;display:flex;align-items:center;justify-content:center;gap:clamp(12px,2vw,28px);flex-wrap:wrap;padding:clamp(18px,2.4vw,30px)">
+        <div style="text-align:center"><div class="kicker">Mesmo estado<br>inicial</div></div>
+        <div class="arrow">+</div>
+        <div style="text-align:center"><div class="kicker accent">Mesma sequência<br>de operações</div></div>
+        <div class="arrow">=</div>
+        <div style="text-align:center"><div class="kicker">Mesmo estado<br>final em toda réplica</div></div>
+      </div>
+      <div class="grid g3" style="margin-top:4px">
+        <div class="card reveal" style="--i:3">
+          <div class="ctitle"><span class="mono accent">01</span>Ordem total</div>
+          <div class="cbody">Um Líder sequencia todas as propostas. Toda réplica correta aplica o log na exata mesma ordem.</div>
+        </div>
+        <div class="card reveal" style="--i:4">
+          <div class="ctitle"><span class="mono accent">02</span>Determinismo</div>
+          <div class="cbody">Mesma entrada produz mesma saída. Nenhuma réplica decide nada sozinha (nem sufixo de colisão).</div>
+        </div>
+        <div class="card reveal" style="--i:5">
+          <div class="ctitle"><span class="mono accent">03</span>Desacoplamento</div>
+          <div class="cbody">O motor opera sobre bytes opacos. Ele ordena pacotes. Não sabe o que é arquivo, chunk ou diretório.</div>
+        </div>
+      </div>
+      <div class="callout reveal" style="--i:6">
+        <span class="bar"></span>
+        <p>O componente reutilizável é o <b>ReplicationNode</b>. Por operar apenas sobre bytes, o mesmo motor de consenso poderia replicar outra aplicação, como um banco de dados, sem qualquer alteração.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · ARQUITETURA -->
+  <section class="slide" data-topic="Arquitetura">
+    <div class="slide-inner">
+      <div class="eyebrow reveal" style="--i:0">Arquitetura da solução</div>
+      <h2 class="head reveal" style="--i:1">Líder-Follower em três camadas</h2>
+      <div class="grid g2" style="grid-template-columns:1.05fr 1fr;align-items:center">
+        <!-- topology -->
+        <div class="card reveal" style="--i:2">
+          <div style="display:flex;align-items:center;justify-content:space-around;gap:10px;padding:6px 0 14px">
+            <div class="node"><div class="disc client">CLI</div><div class="lbl">Cliente</div></div>
+            <div class="arrow" style="font-size:15px">&#8594;</div>
+            <div class="node"><div class="disc leader">L</div><div class="lbl">Líder :5050</div></div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div class="node" style="flex-direction:row;gap:9px"><div class="disc replica" style="width:46px;height:46px;border-radius:14px">F1</div></div>
+              <div class="node" style="flex-direction:row;gap:9px"><div class="disc replica" style="width:46px;height:46px;border-radius:14px">F2</div></div>
+            </div>
+          </div>
+          <div class="cbody" style="border-top:1px solid var(--border-soft);padding-top:12px">
+            O cliente recebe a <b>lista de nós</b> e descobre o Líder sozinho — redirecionado por <span class="mono">WRONG_LEADER</span> e pulando nós mortos. Escrita e leitura passam pelo Líder. Replicação <b>transparente</b>.
+          </div>
+        </div>
+        <!-- layers -->
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <div class="card flat reveal" style="--i:3;padding:14px 18px">
+            <div class="ctitle" style="font-size:17px;margin-bottom:4px"><span class="tag client">Camada 1</span> Communicator</div>
+            <div class="cbody">Sockets Berkeley TCP. Length-prefixed framing e timeouts. Resolve a fragmentação do stream.</div>
+          </div>
+          <div class="card flat reveal" style="--i:4;padding:14px 18px;border-color:var(--accent-line)">
+            <div class="ctitle" style="font-size:17px;margin-bottom:4px"><span class="tag leader">Camada 2</span> ReplicationNode <span class="mono accent" style="font-size:12px">o building block</span></div>
+            <div class="cbody">Consenso, ACKs, heartbeat, recuperação e gatilho de snapshot. Opera sobre bytes opacos.</div>
+          </div>
+          <div class="card flat reveal" style="--i:5;padding:14px 18px">
+            <div class="ctitle" style="font-size:17px;margin-bottom:4px"><span class="tag replica">Camada 3</span> FileSystemApp</div>
+            <div class="cbody">A regra de negócio: chunking, arquivos <span class="mono">.part</span>, metadata. Implementa a interface <span class="mono">AppListener</span>.</div>
+          </div>
+        </div>
+      </div>
+      <div class="callout reveal" style="--i:6">
+        <span class="bar"></span>
+        <p><b>Inversão de dependência:</b> as camadas conversam por uma interface genérica. <span class="mono accent">on_deliver()</span> entrega dados, <span class="mono accent">execute_snapshot()</span> compacta. O consenso nunca enxerga um opcode de filesystem.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · FLUXO DE ESCRITA -->
+  <section class="slide" data-topic="Fluxo de escrita">
+    <div class="slide-inner">
+      <div class="eyebrow reveal" style="--i:0">Algoritmo de execução</div>
+      <h2 class="head reveal" style="--i:1">Fluxo de escrita: replicação síncrona</h2>
+      <div class="grid g2" style="grid-template-columns:1.15fr .85fr;align-items:start">
+        <div class="steps">
+          <div class="step reveal" style="--i:2"><div class="num">1</div><div class="txt">O <b>cliente</b> envia um comando ao Líder. Único ponto de entrada.</div></div>
+          <div class="step reveal" style="--i:3"><div class="num">2</div><div class="txt">O <b>Líder</b> pré-processa e propõe ao SMR: atribui <b>Epoch</b> e um <b>Sequence ID</b> global e único.</div></div>
+          <div class="step reveal" style="--i:4"><div class="num">3</div><div class="txt">Transmite o frame a <b>todos os Followers ativos</b>.</div></div>
+          <div class="step reveal" style="--i:5"><div class="num">4</div><div class="txt">Cada Follower aplica, faz <b>fsync</b> no disco e só então devolve o <span class="mono">REPLICATION_ACK</span>.</div></div>
+          <div class="step reveal" style="--i:6"><div class="num">5</div><div class="txt">O Líder, que <b>bloqueava</b> nos ACKs, entrega local (<span class="mono">on_deliver</span>) e responde <span class="ok mono" style="color:var(--accent)">SUCCESS</span>.</div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:13px">
+          <div class="card reveal" style="--i:5;padding:18px">
+            <div class="ctitle" style="font-size:18px">ACK-after-fsync</div>
+            <div class="cbody">O ACK só sai depois do dado fisicamente no prato do disco. Aguenta até uma queda de energia no meio da escrita.</div>
+          </div>
+          <div class="callout reveal" style="--i:6">
+            <span class="bar"></span>
+            <p>Não há quórum de maioria. O Líder espera o ACK de <b>todos os Followers ativos</b> e, pela <b>Drop Rule</b>, derruba quem estoura o timeout. É uma escolha por disponibilidade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · ANATOMIA DO PACOTE -->
+  <section class="slide" data-topic="Protocolo binário">
+    <div class="slide-inner">
+      <div class="eyebrow reveal" style="--i:0">Protocolo binário</div>
+      <h2 class="head reveal" style="--i:1">Estrutura do pacote</h2>
+      <p class="lead reveal" style="--i:2">Comunicação direta por sockets TCP, sem HTTP ou JSON. Os pacotes são aninhados e lidos com enquadramento exato por prefixo de tamanho.</p>
+
+      <div class="reveal" style="--i:3">
+        <div class="bytes">
+          <div class="byte-seg seg-frame"><span class="bsz">4 bytes</span><span class="bname">Framing</span><span class="bsub">comprimento N</span></div>
+          <div class="byte-seg seg-epoch"><span class="bsz">4 bytes</span><span class="bname">Epoch ID</span><span class="bsub">anti líder velho</span></div>
+          <div class="byte-seg seg-seq"><span class="bsz">4 bytes</span><span class="bname">Sequence ID</span><span class="bsub">ordem global</span></div>
+          <div class="byte-seg seg-op"><span class="bsz">1 byte</span><span class="bname">OpCode SMR</span><span class="bsub">0x01..0x08</span></div>
+          <div class="byte-seg seg-pay"><span class="bsz">N variável</span><span class="bname">Payload da Aplicação</span><span class="bsub">bytes opacos para o consenso</span></div>
+        </div>
+        <div style="display:flex;gap:6px;margin-top:7px">
+          <div style="flex:0 0 auto;width:calc(0px)"></div>
+          <div class="brace" style="flex:1;border-top:1px solid var(--border);padding-top:5px;margin-left:25%">Header SMR = 9 bytes &nbsp;<span class="mono accent">struct "!IIB"</span></div>
+        </div>
+      </div>
+
+      <div class="grid g2 reveal" style="--i:4;margin-top:6px">
+        <div class="card flat">
+          <div class="ctitle" style="font-size:16px"><span class="mono accent">0x20</span> Exemplo: payload de CHUNK</div>
+          <div class="bytes" style="margin-top:8px">
+            <div class="byte-seg seg-op" style="flex:0 0 auto"><span class="bsz">1 B</span><span class="bsub" style="color:var(--text)">OpCode App</span></div>
+            <div class="byte-seg seg-frame" style="flex:0 0 auto"><span class="bsz">16 B</span><span class="bsub" style="color:var(--text)">UUID sessão</span></div>
+            <div class="byte-seg seg-pay"><span class="bsz">&#8804; 4 MB</span><span class="bsub" style="color:var(--text)">dados do arquivo</span></div>
+          </div>
+        </div>
+        <div class="card flat">
+          <div class="ctitle" style="font-size:16px">Por que importa</div>
+          <div class="cbody">O <b>Epoch</b> protege contra um líder obsoleto após partição. O <b>Sequence ID</b> garante ordem e unicidade de cada entrada do log. Baixo overhead, leitura previsível.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · OPCODES -->
+  <section class="slide" data-topic="Opcodes">
+    <div class="slide-inner">
+      <div class="eyebrow reveal" style="--i:0">Operações do protocolo</div>
+      <h2 class="head reveal" style="--i:1">Opcodes por camada</h2>
+      <div class="grid g2" style="align-items:start">
+        <div class="reveal" style="--i:2">
+          <div class="tag leader" style="margin-bottom:10px">Camada de Replicação · SMR</div>
+          <div class="ops">
+            <div class="op"><code>0x01</code><span class="onm">APP_DATA</span><span class="od">payload da aplicação</span></div>
+            <div class="op"><code>0x02</code><span class="onm">HEARTBEAT</span><span class="od">"estou vivo"</span></div>
+            <div class="op"><code>0x03</code><span class="onm">REPLICATION_ACK</span><span class="od">persistido com fsync</span></div>
+            <div class="op"><code>0x04</code><span class="onm">CATCHUP_REQUEST</span><span class="od">último seq conhecido</span></div>
+            <div class="op"><code>0x05</code><span class="onm">SNAPSHOT_TRANSMIT</span><span class="od">.tar.gz do estado</span></div>
+            <div class="op"><code>0x06</code><span class="onm">WRONG_LEADER</span><span class="od">redireciona ao líder</span></div>
+            <div class="op"><code>0x07</code><span class="onm">I_AM_FOLLOWER</span><span class="od">handshake de identidade</span></div>
+            <div class="op"><code>0x08</code><span class="onm">I_AM_CLIENT</span><span class="od">handshake de identidade</span></div>
+            <div class="op"><code>0x09</code><span class="onm">WHO_IS_LEADER</span><span class="od">sonda de descoberta</span></div>
+            <div class="op"><code>0x0A</code><span class="onm">LEADER_ANNOUNCE</span><span class="od">líder anuncia (com epoch)</span></div>
+            <div class="op"><code>0x0B</code><span class="onm">PROMOTE</span><span class="od">flip a líder em runtime</span></div>
+          </div>
+        </div>
+        <div class="reveal" style="--i:3">
+          <div class="tag replica" style="margin-bottom:10px">Camada de Aplicação · Filesystem</div>
+          <div class="ops">
+            <div class="op"><code>0x10</code><span class="onm">START</span><span class="od">abre sessão, gera UUID</span></div>
+            <div class="op"><code>0x20</code><span class="onm">CHUNK</span><span class="od">streama 4 MB por vez</span></div>
+            <div class="op"><code>0x30</code><span class="onm">COMMIT</span><span class="od">rename atômico final</span></div>
+            <div class="op"><code>0x40</code><span class="onm">DELETE_FILE</span><span class="od">remove arquivo</span></div>
+            <div class="op"><code>0x50</code><span class="onm">READ_REQUEST</span><span class="od">pede arquivo</span></div>
+            <div class="op"><code>0x51</code><span class="onm">READ_RESPONSE</span><span class="od">streama de volta</span></div>
+            <div class="op"><code>0x60</code><span class="onm">LIST_REQUEST</span><span class="od">pede a árvore</span></div>
+            <div class="op"><code>0x61</code><span class="onm">LIST_RESPONSE</span><span class="od">JSON do metadata</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="callout reveal" style="--i:4">
+        <span class="bar"></span>
+        <p><b>Encapsulamento:</b> os opcodes de aplicação (0x10..0x61) viajam como bytes opacos dentro de um <span class="mono">0x01 APP_DATA</span>. O consenso transporta sem nunca interpretar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · TOLERÂNCIA A FALHAS -->
+  <section class="slide" data-topic="Tolerância a falhas">
+    <div class="slide-inner">
+      <div class="eyebrow reveal" style="--i:0">Tolerância a falhas</div>
+      <h2 class="head reveal" style="--i:1">Falhas e mecanismos de resposta</h2>
+      <div class="grid g2">
+        <div class="card reveal" style="--i:2">
+          <div class="ctitle"><span class="tag danger">Falha</span> Socket pendurado</div>
+          <div class="cbody">Sem o pacote TCP <span class="mono">FIN</span> (queda de energia), o <span class="mono">recv()</span> do Líder travaria pra sempre.</div>
+          <div class="cbody" style="margin-top:9px;color:var(--text)"><b class="accent">Resposta:</b> timeouts estritos e <b>Heartbeat</b> (0x02) a cada X segundos.</div>
+        </div>
+        <div class="card reveal" style="--i:3">
+          <div class="ctitle"><span class="tag danger">Falha</span> Trava síncrona</div>
+          <div class="cbody">Um Follower morre no meio do upload. O Líder bloqueado pelo ACK congelaria o cluster inteiro.</div>
+          <div class="cbody" style="margin-top:9px;color:var(--text)"><b class="accent">Resposta:</b> a <b>Drop Rule</b> evicta o nó mudo, desbloqueia e devolve SUCCESS.</div>
+        </div>
+        <div class="card reveal" style="--i:4">
+          <div class="ctitle"><span class="tag danger">Falha</span> Split-brain</div>
+          <div class="cbody">Um líder antigo ("fantasma") volta após partição e tenta transmitir sequências obsoletas.</div>
+          <div class="cbody" style="margin-top:9px;color:var(--text)"><b class="accent">Resposta:</b> o <b>Epoch ID</b>. Followers rejeitam tudo de um epoch inferior ao atual.</div>
+        </div>
+        <div class="card reveal" style="--i:5">
+          <div class="ctitle"><span class="tag danger">Falha</span> Cliente no nó errado</div>
+          <div class="cbody">Um cliente conecta num Follower por engano e pede uma escrita.</div>
+          <div class="cbody" style="margin-top:9px;color:var(--text)"><b class="accent">Resposta:</b> <span class="mono">WRONG_LEADER</span> (0x06) devolve o <span class="mono">host:port</span> do líder real e o cliente reconecta.</div>
+        </div>
+      </div>
+      <div class="callout reveal" style="--i:6">
+        <span class="bar"></span>
+        <p>Princípio de projeto: priorizar a <b>disponibilidade</b> em vez de exigir quórum de maioria. O cluster sobrevivente continua processando e ressincroniza os nós ausentes na recuperação.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · RECUPERAÇÃO -->
+  <section class="slide" data-topic="Recuperação de estado">
+    <div class="slide-inner">
+      <div class="eyebrow reveal" style="--i:0">Recuperação de estado</div>
+      <h2 class="head reveal" style="--i:1">Reintegração de nós: catch-up e snapshot</h2>
+      <p class="lead reveal" style="--i:2">Um Follower reinicia e manda <span class="mono">CATCHUP_REQUEST</span> com seu último seq. O Líder mede a lacuna e escolhe.</p>
+      <div class="grid g2">
+        <div class="card reveal" style="--i:3" >
+          <div class="ctitle"><span class="mono replica">&#8594;</span> Lacuna pequena</div>
+          <div class="cbody">O log ainda está na RAM do Líder. Ele faz <b>streaming incremental</b> só das operações perdidas. O Follower aplica em ordem e volta.</div>
+        </div>
+        <div class="card reveal" style="--i:4">
+          <div class="ctitle"><span class="mono leader">&#8634;</span> Lacuna grande</div>
+          <div class="cbody">O log já foi compactado. O Líder envia um <b>snapshot</b> <span class="mono">.tar.gz</span> (metadata.json + arquivos). O Follower restaura do zero, instantâneo.</div>
+        </div>
+      </div>
+      <div class="grid g3" style="margin-top:4px">
+        <div class="card flat reveal" style="--i:5">
+          <div class="ctitle" style="font-size:16px">Estado RECOVERING</div>
+          <div class="cbody">Durante a restauração, broadcasts ao vivo entram numa <b>fila FIFO</b>. Só depois da extração ela é drenada. Sem corromper o estado.</div>
+        </div>
+        <div class="card flat reveal" style="--i:6">
+          <div class="ctitle" style="font-size:16px">Log compaction</div>
+          <div class="cbody">A cada <b>1000 operações</b>, snapshot e descarte do log antigo. Líder e Followers compactam deterministicamente (<span class="mono">seq % 1000 == 0</span>).</div>
+        </div>
+        <div class="card flat reveal" style="--i:7">
+          <div class="ctitle" style="font-size:16px">Target-bounded</div>
+          <div class="cbody">O Líder responde com seu seq atual. O Follower sabe a meta e ativa sozinho, mesmo sem tráfego novo. Recuperação nunca trava.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · APLICAÇÃO -->
+  <section class="slide" data-topic="Aplicação">
+    <div class="slide-inner">
+      <div class="eyebrow reveal" style="--i:0">Camada de aplicação</div>
+      <h2 class="head reveal" style="--i:1">Sistema de arquivos distribuído</h2>
+      <div class="grid g2" style="grid-template-columns:.95fr 1.05fr;align-items:center">
+        <div class="term reveal" style="--i:2">
+          <div class="bar"><i></i><i></i><i></i><span>client.py · DFS&gt;</span></div>
+          <div class="body">
+<div class="ln"><span class="pmt">DFS&gt;</span> upload relatorio.pdf relatorio.pdf</div>
+<div class="ln out">  start &#183; chunk &#215;3 &#183; commit ... <span class="ok">replicado em 3 nós</span></div>
+<div class="ln"><span class="pmt">DFS&gt;</span> list</div>
+<div class="ln out">  relatorio.pdf   1.4 MB</div>
+<div class="ln out">  foto.png        842 KB</div>
+<div class="ln"><span class="pmt">DFS&gt;</span> download relatorio.pdf ./local.pdf</div>
+<div class="ln out">  <span class="ok">ok</span> &#183; lido direto do Líder</div>
+<div class="ln"><span class="pmt">DFS&gt;</span> delete foto.png</div>
+<div class="ln out">  <span class="ok">ok</span></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="card reveal" style="--i:3">
+            <div class="ctitle"><span class="mono accent">.part</span> Atomicidade no upload</div>
+            <div class="cbody">Cada upload escreve num temporário <span class="mono">.UUID.part</span>. O arquivo só vira final no <span class="mono">COMMIT</span>, com um <span class="mono">os.rename</span> atômico. Nada de arquivo meio escrito visível.</div>
+          </div>
+          <div class="card reveal" style="--i:4">
+            <div class="ctitle">Colisão determinística</div>
+            <div class="cbody">Dois "video.mp4" ao mesmo tempo? Só o <b>Líder</b> calcula o sufixo <span class="mono">(1)</span>, serializado no lock do sequenciador (sem corrida), e o embute no COMMIT. Os Followers aplicam a string exata — nunca decidem sozinhos.</div>
+          </div>
+          <div class="card reveal" style="--i:5">
+            <div class="ctitle">Leitura forte no caminho normal</div>
+            <div class="cbody">Todo <span class="mono">read</span> e <span class="mono">list</span> é servido pelo Líder, do disco local — sem leitura stale enquanto o Líder vive. Na falha, é um trade consciente por disponibilidade.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 · VALIDAÇÃO -->
+  <section class="slide" data-topic="Validação">
+    <div class="slide-inner">
+      <div class="eyebrow reveal" style="--i:0">Validação · <span class="mono">./run_tests.sh</span></div>
+      <h2 class="head reveal" style="--i:1">Testes automatizados</h2>
+      <p class="lead reveal" style="--i:2">O script sobe um Líder e dois Followers locais e roda o ciclo inteiro, do upload ao estado final. São dez verificações ponta a ponta, sempre do zero.</p>
+      <div class="grid g3" style="gap:11px">
+        <div class="card flat reveal" style="--i:3;padding:13px 16px"><div class="ctitle" style="font-size:15px;margin:0"><span class="mono accent">01</span> Replicação síncrona</div><div class="cbody" style="font-size:12.5px;margin-top:5px">Upload idêntico nos 3 sandboxes.</div></div>
+        <div class="card flat reveal" style="--i:3;padding:13px 16px"><div class="ctitle" style="font-size:15px;margin:0"><span class="mono leader">02</span> Queda de follower</div><div class="cbody" style="font-size:12.5px;margin-top:5px"><span class="mono">SIGKILL</span>; Drop Rule, cluster segue.</div></div>
+        <div class="card flat reveal" style="--i:3;padding:13px 16px"><div class="ctitle" style="font-size:15px;margin:0"><span class="mono replica">03</span> Catch-up incremental</div><div class="cbody" style="font-size:12.5px;margin-top:5px">Follower volta e sincroniza o que perdeu.</div></div>
+        <div class="card flat reveal" style="--i:4;padding:13px 16px"><div class="ctitle" style="font-size:15px;margin:0"><span class="mono accent">04</span> Snapshot recovery</div><div class="cbody" style="font-size:12.5px;margin-top:5px">Nó zerado restaura do <span class="mono">.tar.gz</span>.</div></div>
+        <div class="card flat reveal" style="--i:4;padding:13px 16px"><div class="ctitle" style="font-size:15px;margin:0"><span class="mono accent">05</span> Download / read</div><div class="cbody" style="font-size:12.5px;margin-top:5px">Conteúdo baixado = original, byte a byte.</div></div>
+        <div class="card flat reveal" style="--i:4;padding:13px 16px"><div class="ctitle" style="font-size:15px;margin:0"><span class="mono accent">06</span> Delete replicado</div><div class="cbody" style="font-size:12.5px;margin-top:5px">Remoção propaga aos 3 nós.</div></div>
+        <div class="card flat reveal" style="--i:5;padding:13px 16px"><div class="ctitle" style="font-size:15px;margin:0"><span class="mono accent">07</span> Colisão concorrente</div><div class="cbody" style="font-size:12.5px;margin-top:5px">Sufixo <span class="mono">(1)</span> determinístico, sem lost-update.</div></div>
+        <div class="card flat reveal" style="--i:5;padding:13px 16px"><div class="ctitle" style="font-size:15px;margin:0"><span class="mono accent">08</span> Diff das réplicas</div><div class="cbody" style="font-size:12.5px;margin-top:5px"><span class="mono">sha256</span> dos 3 nós comparado e impresso.</div></div>
+        <div class="card flat reveal" style="--i:5;padding:13px 16px"><div class="ctitle" style="font-size:15px;margin:0"><span class="mono accent">09</span> Redirecionamento</div><div class="cbody" style="font-size:12.5px;margin-top:5px">Follower devolve <span class="mono">WRONG_LEADER</span> + host:port do líder.</div></div>
+        <div class="card flat reveal" style="--i:5;padding:13px 16px"><div class="ctitle" style="font-size:15px;margin:0"><span class="mono accent">10</span> Falha de líder</div><div class="cbody" style="font-size:12.5px;margin-top:5px">Flip em runtime (epoch+1); follower redescobre sozinho, sem reinício.</div></div>
+      </div>
+      <div class="callout reveal" style="--i:6">
+        <span class="bar"></span>
+        <p>Verificação final automatizada: o <span class="mono">sha256</span> dos arquivos das 3 réplicas é comparado e impresso — <span class="accent">IDENTICAL</span> em cada cenário.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 · LIMITAÇÕES & CONCLUSÃO -->
+  <section class="slide" data-topic="Limitações e conclusão">
+    <div class="slide-inner">
+      <div class="eyebrow reveal" style="--i:0">Conclusão</div>
+      <h2 class="head reveal" style="--i:1">Limitações e contribuições</h2>
+      <div class="grid g2" style="align-items:start">
+        <div class="reveal" style="--i:2">
+          <div class="tag leader" style="margin-bottom:12px">Limitações (escopo acadêmico)</div>
+          <ul class="clean">
+            <li><span class="mk">&#9656;</span><span><b>Sem eleição automática.</b> Sem Raft. Reconfiguração: <span class="mono">PROMOTE</span> faz o flip de 1 nó em runtime (epoch+1) e os followers redescobrem o líder sozinhos — nenhum nó vivo é morto.</span></li>
+            <li><span class="mk">&#9656;</span><span><b>Gargalo no Líder.</b> Toda leitura e escrita passa por ele — o preço da consistência forte no caminho normal.</span></li>
+            <li><span class="mk">&#9656;</span><span><b>Trade CAP na falha.</b> A Drop Rule prioriza disponibilidade: uma escrita recém-confirmada pode viver só no Líder até o ACK dos followers.</span></li>
+            <li><span class="mk">&#9656;</span><span><b>Log volátil em RAM.</b> Sem WAL persistente. Crash total antes do snapshot pode perder ops recentes.</span></li>
+          </ul>
+        </div>
+        <div class="reveal" style="--i:3">
+          <div class="tag" style="margin-bottom:12px;color:var(--accent);background:var(--accent-soft);border:1px solid var(--accent-line)">Resultado</div>
+          <ul class="clean">
+            <li><span class="mk">&#10003;</span><span><b>Aplicação distribuída real</b> em 3 processos independentes, sockets Berkeley.</span></li>
+            <li><span class="mk">&#10003;</span><span><b>Recuperação completa:</b> incremental por log e total por snapshot.</span></li>
+            <li><span class="mk">&#10003;</span><span><b>Building block modular</b> e desacoplado, aderente aos conceitos de SMR e tolerância a falhas.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout reveal" style="--i:4">
+        <span class="bar"></span>
+        <p>A entrega central é o motor de replicação: genérico, testável e reutilizável. O sistema de arquivos é a aplicação construída para demonstrá-lo na prática.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 · OBRIGADO -->
+  <section class="slide" data-topic="Perguntas">
+    <div class="slide-inner" style="gap:clamp(18px,3vh,32px)">
+      <div class="eyebrow reveal" style="--i:0">INE5418 · Grupo 17 · Tema: Replicação</div>
+      <h1 class="title reveal" style="--i:1">Obrigado.<br><span class="accent">Perguntas?</span></h1>
+      <div class="footer-meta reveal" style="--i:2">
+        <span>Gustavo Rodrigues Alves D'Angelo</span><span class="muted">·</span>
+        <span>Tom Pereira Hunt</span><span class="muted">·</span>
+        <span>Pedro Henrique Gimenez</span>
+      </div>
+      <p class="lead reveal" style="--i:3">Sistema de Arquivos Distribuído com Replicação de Máquina de Estados.</p>
+    </div>
+  </section>
+
+</div>
+
+<div class="dots" id="dots"></div>
+
+<div class="controls">
+  <button onclick="go(cur-1)" aria-label="anterior">&#8592;</button>
+  <div class="counter"><b id="cnow">1</b> / <span id="ctot">13</span></div>
+  <button onclick="go(cur+1)" aria-label="próximo">&#8594;</button>
+</div>
+
+<div class="khint"><span class="kbd">&#8592;</span><span class="kbd">&#8594;</span> navegar &nbsp; <span class="kbd">F</span> tela cheia</div>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+const N=slides.length;
+let cur=0;
+const progress=document.getElementById('progress');
+const topic=document.getElementById('topic');
+const cnow=document.getElementById('cnow');
+const dotsWrap=document.getElementById('dots');
+document.getElementById('ctot').textContent=N;
+
+slides.forEach((s,i)=>{
+  const d=document.createElement('i');
+  d.onclick=()=>go(i);
+  dotsWrap.appendChild(d);
+});
+const dots=[...dotsWrap.children];
+
+function go(n){
+  n=Math.max(0,Math.min(N-1,n));
+  if(n===cur && slides[cur].classList.contains('active')) return;
+  slides[cur].classList.remove('active');
+  cur=n;
+  // restart reveal: force reflow so transitions replay
+  const s=slides[cur];
+  s.classList.add('active');
+  void s.offsetWidth;
+  progress.style.width=((cur)/(N-1)*100)+'%';
+  cnow.textContent=cur+1;
+  topic.textContent=s.dataset.topic||'';
+  dots.forEach((d,i)=>d.classList.toggle('on',i===cur));
+  if(history.replaceState) history.replaceState(null,'','#'+(cur+1));
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '||e.key.toLowerCase()==='l'){e.preventDefault();go(cur+1);}
+  else if(e.key==='ArrowLeft'||e.key==='PageUp'||e.key.toLowerCase()==='h'){e.preventDefault();go(cur-1);}
+  else if(e.key==='Home'){go(0);}
+  else if(e.key==='End'){go(N-1);}
+  else if(e.key.toLowerCase()==='f'){
+    if(!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+    else document.exitFullscreen?.();
+  }
+});
+
+if(location.search.indexOf('capture')>-1) document.body.classList.add('capture');
+const startHash=parseInt(location.hash.replace('#',''),10);
+go(Number.isFinite(startHash) && startHash>=1 ? startHash-1 : 0);
+
+/* static export mode: ?export -> stack all slides, one per PDF page, with a
+   per-slide topbar (correct section label) and progress bar. */
+if(location.search.indexOf('export')>-1){
+  document.body.classList.add('export');
+  slides.forEach((s,i)=>{
+    const top=document.createElement('div');
+    top.className='ptop';
+    top.innerHTML='<span class="b"><span class="d"></span><span>INE5418 · Computação Distribuída</span></span><span class="t">'+(s.dataset.topic||'')+'</span>';
+    s.appendChild(top);
+    const bar=document.createElement('div');
+    bar.className='pbar';
+    bar.style.width=(N>1 ? i/(N-1)*100 : 100)+'%';
+    s.appendChild(bar);
+  });
+}
+</script>
+</body>
+</html>
