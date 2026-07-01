@@ -1,0 +1,22 @@
+from abc import ABC
+
+from model.world_objects.world_object import WorldObject
+
+
+class SCWorldObject(WorldObject, ABC):
+    """
+    SCWorldObject - Switchable Clipping World Object
+    Classe para objetos cujo algoritmo de clipping pode ser alterado.
+    """
+
+    def change_clipping_mode(self, mode: str) -> None:
+        """
+        Muda o modo de clipping. O atributo self.clipping_modes é um dicionário que mapeia
+        nomes de modos de clipping para funções de clipping, e self.clipping_mode é a função de clipping atual.
+        @param mode: Modo de clipping.
+        """
+
+        try:
+            self.clipping_mode = self.clipping_modes[mode]
+        except KeyError as e:
+            raise ValueError(f"Modo de clipping inválido: {mode}") from e

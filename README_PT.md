@@ -16,6 +16,7 @@ Repositório de programação das disciplinas cursadas por mim no curso bacharel
 | INE5411 | [Organização de Computadores I](./Computer%20Organization/) | **3º Semestre** - 24.1 |  |
 | INE5413 | [Grafos](./Graphs/) | **4º Semestre** - 24.2 |  |
 | INE5414 | [Redes de Computadores I](./Computer%20Networks%20I/) | **4º Semestre** - 24.2 |  |
+| INE5415 | [Teoria da Computação](./Theory%20of%20Computation/) | **4º Semestre** - 24.2 |  |
 | INE5416 | [Paradigmas de Programação](./Programming%20Paradigms/) | **4º Semestre** - 24.2 |  |
 | INE5452 | [Tópicos Especiais em Algoritmos II](./Special%20Topics%20in%20Algorithms%20II/) | **4º Semestre** - 24.2 |  |
 | INE5417 | [Engenharia de Software I](./Software%20Engineering%20I/) | **4º Semestre** - 24.2 | [Soma 10](https://github.com/pehqge/soma10) |

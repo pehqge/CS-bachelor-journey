@@ -16,6 +16,7 @@ Repository for the programming courses I have taken in the Bachelor’s program 
 |  INE5411  | [Computer Organization I](./Computer%20Organization/) | **3rd Semester** - 24.1 |  |
 |  INE5413  | [Graphs](./Graphs/) | **4th Semester** - 24.2 |  |
 |  INE5414  | [Computer Networks I](./Computer%20Networks%20I/) | **4th Semester** - 24.2 |  |
+|  INE5415  | [Theory of Computation](./Theory%20of%20Computation/) | **4th Semester** - 24.2 |  |
 |  INE5416  | [Programming Paradigms](./Programming%20Paradigms/) | **4th Semester** - 24.2 |  |
 |  INE5452  | [Special Topics in Algorithms II](./Special%20Topics%20in%20Algorithms%20II/) | **4th Semester** - 24.2 |  |
 |  INE5417  | [Software Engineering I](./Software%20Engineering%20I/) | **4th Semester** - 24.2 | [Soma 10](https://github.com/pehqge/soma10) |
