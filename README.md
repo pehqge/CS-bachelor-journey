@@ -24,3 +24,5 @@ Repository for the programming courses I have taken in the Bachelor’s program 
 |  INE5421  | [Formal Languages and Compilers](./Formal%20Languages%20and%20Compilers/) | **6th Semester** - 25.2 | [Lexical & Syntactic Analyzer](./Formal%20Languages%20and%20Compilers/) |
 |  INE5423  | [Database I](./Database%20I/) | **6th Semester** - 25.2 |  |
 |  INE5418  | [Distributed Systems](./Distributed%20Systems/) | **7th Semester** - 26.1 | [Distributed Filesystem (SMR)](./Distributed%20Systems/) |
+|  INE5425  | [Modeling and Simulation](./Modeling%20and%20Simulation/) | **7th Semester** - 26.1 | [Cellular Automata in GenESyS](https://github.com/JVSutter/Genesys-Simulator-cellular-automata) |
+|  INE5431  | [Multimedia Systems](./Multimedia%20Systems/) | **7th Semester** - 26.1 |  |
