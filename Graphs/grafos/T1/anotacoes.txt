@@ -1,0 +1,11 @@
+Para o grafo
+
+1 -- 2 (peso 4)
+1 -- 3 (peso 2)
+2 -- 3 (peso 3)
+
+A estrutura list<pair<int, int>> *adj seria:
+
+adj[1]: Lista contendo pares (2, 4) e (3, 2) (arestas de 1 para 2 com peso 4, e de 1 para 3 com peso 2).
+adj[2]: Lista contendo pares (1, 4) e (3, 3) (arestas de 2 para 1 com peso 4, e de 2 para 3 com peso 3).
+adj[3]: Lista contendo pares (1, 2) e (2, 3) (arestas de 3 para 1 com peso 2, e de 3 para 2 com peso 3).

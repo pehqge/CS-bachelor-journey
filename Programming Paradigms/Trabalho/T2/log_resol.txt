@@ -1,0 +1,443 @@
+Resolvendo o problema numero 1
+Problema 001 resolvido corretamente em 1.12 segundos.
+
+Resolvendo o problema numero 2
+Problema 002 resolvido corretamente em 1.11 segundos.
+
+Resolvendo o problema numero 3
+Problema 003 resolvido corretamente em 1.10 segundos.
+
+Resolvendo o problema numero 4
+Problema 004 resolvido corretamente em 1.16 segundos.
+
+Resolvendo o problema numero 5
+Problema 005 resolvido corretamente em 1.12 segundos.
+
+Resolvendo o problema numero 6
+Problema 006 resolvido corretamente em 1.11 segundos.
+
+Resolvendo o problema numero 7
+Problema 007 resolvido corretamente em 1.12 segundos.
+
+Resolvendo o problema numero 8
+Problema 008 resolvido corretamente em 1.27 segundos.
+
+Resolvendo o problema numero 9
+Problema 009 resolvido corretamente em 1.16 segundos.
+
+Resolvendo o problema numero 10
+Problema 010 resolvido corretamente em 1.11 segundos.
+
+Resolvendo o problema numero 11
+Problema 011 resolvido corretamente em 1.13 segundos.
+
+Resolvendo o problema numero 12
+Problema 012 resolvido corretamente em 1.12 segundos.
+
+Resolvendo o problema numero 13
+Problema 013 resolvido corretamente em 1.14 segundos.
+
+Resolvendo o problema numero 14
+Problema 014 resolvido corretamente em 2.01 segundos.
+
+Resolvendo o problema numero 15
+Problema 015 resolvido corretamente em 1.17 segundos.
+
+Resolvendo o problema numero 16
+Problema 016 resolvido corretamente em 1.18 segundos.
+
+Resolvendo o problema numero 17
+Problema 017 resolvido corretamente em 1.27 segundos.
+
+Resolvendo o problema numero 18
+Problema 018 resolvido corretamente em 1.28 segundos.
+
+Resolvendo o problema numero 19
+Problema 019 resolvido corretamente em 1.61 segundos.
+
+Resolvendo o problema numero 20
+Problema 020 resolvido corretamente em 1.60 segundos.
+
+Resolvendo o problema numero 21
+Problema 021 resolvido corretamente em 1.15 segundos.
+
+Resolvendo o problema numero 22
+Problema 022 resolvido corretamente em 1.16 segundos.
+
+Resolvendo o problema numero 23
+Problema 023 resolvido corretamente em 1.20 segundos.
+
+Resolvendo o problema numero 24
+Problema 024 resolvido corretamente em 1.18 segundos.
+
+Resolvendo o problema numero 25
+Problema 025 resolvido corretamente em 1.34 segundos.
+
+Resolvendo o problema numero 26
+Problema 026 resolvido corretamente em 1.85 segundos.
+
+Resolvendo o problema numero 27
+Problema 027 resolvido corretamente em 2.32 segundos.
+
+Resolvendo o problema numero 28
+Problema 028 resolvido corretamente em 1.24 segundos.
+
+Resolvendo o problema numero 29
+Problema 029 resolvido corretamente em 1.70 segundos.
+
+Resolvendo o problema numero 30
+Problema 030 resolvido corretamente em 1.36 segundos.
+
+Resolvendo o problema numero 31
+Problema 031 resolvido corretamente em 1.18 segundos.
+
+Resolvendo o problema numero 32
+Problema 032 resolvido corretamente em 1.12 segundos.
+
+Resolvendo o problema numero 33
+Problema 033 resolvido corretamente em 1.19 segundos.
+
+Resolvendo o problema numero 34
+Problema 034 resolvido corretamente em 1.24 segundos.
+
+Resolvendo o problema numero 35
+Problema 035 resolvido corretamente em 1.14 segundos.
+
+Resolvendo o problema numero 36
+Problema 036 resolvido corretamente em 1.17 segundos.
+
+Resolvendo o problema numero 37
+Problema 037 resolvido corretamente em 2.35 segundos.
+
+Resolvendo o problema numero 38
+Problema 038 resolvido corretamente em 1.80 segundos.
+
+Resolvendo o problema numero 39
+Problema 039 resolvido corretamente em 7.25 segundos.
+
+Resolvendo o problema numero 40
+Problema 040 resolvido corretamente em 1.50 segundos.
+
+Resolvendo o problema numero 41
+Problema 041 resolvido corretamente em 1.13 segundos.
+
+Resolvendo o problema numero 42
+Problema 042 resolvido corretamente em 1.13 segundos.
+
+Resolvendo o problema numero 43
+Problema 043 resolvido corretamente em 1.15 segundos.
+
+Resolvendo o problema numero 44
+Problema 044 resolvido corretamente em 17.12 segundos.
+
+Resolvendo o problema numero 45
+Problema 045 resolvido corretamente em 1.15 segundos.
+
+Resolvendo o problema numero 46
+Problema 046 resolvido corretamente em 2.74 segundos.
+
+Resolvendo o problema numero 47
+Problema 047 resolvido corretamente em 3.64 segundos.
+
+Resolvendo o problema numero 48
+Problema 048 resolvido corretamente em 2.11 segundos.
+
+Resolvendo o problema numero 49
+Problema 049 resolvido corretamente em 1.31 segundos.
+
+Resolvendo o problema numero 50
+Problema 050 resolvido corretamente em 9.48 segundos.
+
+Resolvendo o problema numero 51
+Problema 051 resolvido corretamente em 1.13 segundos.
+
+Resolvendo o problema numero 52
+Problema 052 resolvido corretamente em 1.12 segundos.
+
+Resolvendo o problema numero 53
+Problema 053 resolvido corretamente em 1.15 segundos.
+
+Resolvendo o problema numero 54
+Problema 054 resolvido corretamente em 1.25 segundos.
+
+Resolvendo o problema numero 55
+Problema 055 resolvido corretamente em 2.89 segundos.
+
+Resolvendo o problema numero 56
+Problema 056 resolvido corretamente em 1.49 segundos.
+
+Resolvendo o problema numero 57
+Problema 057 resolvido corretamente em 2.62 segundos.
+
+Resolvendo o problema numero 58
+Problema 058 resolvido corretamente em 8.03 segundos.
+
+Resolvendo o problema numero 59
+Problema 059 resolvido corretamente em 5.78 segundos.
+
+Resolvendo o problema numero 60
+Problema 060 resolvido corretamente em 44.43 segundos.
+
+Resolvendo o problema numero 61
+Problema 061 resolvido corretamente em 1.12 segundos.
+
+Resolvendo o problema numero 62
+Problema 062 resolvido corretamente em 1.14 segundos.
+
+Resolvendo o problema numero 63
+Problema 063 resolvido corretamente em 1.26 segundos.
+
+Resolvendo o problema numero 64
+Problema 064 resolvido corretamente em 1.13 segundos.
+
+Resolvendo o problema numero 65
+Problema 065 resolvido corretamente em 4.26 segundos.
+
+Resolvendo o problema numero 66
+Problema 066 resolvido corretamente em 1.33 segundos.
+
+Resolvendo o problema numero 67
+Problema 067 resolvido corretamente em 1.51 segundos.
+
+Resolvendo o problema numero 68
+Problema 068 resolvido corretamente em 1.51 segundos.
+
+Resolvendo o problema numero 69
+Problema 069 resolvido corretamente em 23.04 segundos.
+
+Resolvendo o problema numero 70
+Problema 070 resolvido corretamente em 55.90 segundos.
+
+Resolvendo o problema numero 71
+Problema 071 resolvido corretamente em 1.14 segundos.
+
+Resolvendo o problema numero 72
+Problema 072 resolvido corretamente em 1.14 segundos.
+
+Resolvendo o problema numero 73
+Problema 073 resolvido corretamente em 1.27 segundos.
+
+Resolvendo o problema numero 74
+Problema 074 resolvido corretamente em 1.19 segundos.
+
+Resolvendo o problema numero 75
+Problema 075 resolvido corretamente em 1.42 segundos.
+
+Resolvendo o problema numero 76
+Problema 076 resolvido corretamente em 1.42 segundos.
+
+Resolvendo o problema numero 77
+Problema 077 resolvido corretamente em 5.35 segundos.
+
+Resolvendo o problema numero 78
+Problema 078 resolvido corretamente em 9.97 segundos.
+
+Resolvendo o problema numero 79
+Problema 079 resolvido corretamente em 2.83 segundos.
+
+Resolvendo o problema numero 80
+Problema 080 resolvido corretamente em 6.87 segundos.
+
+Resolvendo o problema numero 81
+Problema 081 resolvido corretamente em 1.12 segundos.
+
+Resolvendo o problema numero 82
+Problema 082 resolvido corretamente em 1.11 segundos.
+
+Resolvendo o problema numero 83
+Problema 083 resolvido corretamente em 1.15 segundos.
+
+Resolvendo o problema numero 84
+Problema 084 resolvido corretamente em 1.16 segundos.
+
+Resolvendo o problema numero 85
+Problema 085 resolvido corretamente em 1.61 segundos.
+
+Resolvendo o problema numero 86
+Problema 086 resolvido corretamente em 30.13 segundos.
+
+Resolvendo o problema numero 87
+Problema 087 resolvido corretamente em 1.93 segundos.
+
+Resolvendo o problema numero 88
+Problema 088 resolvido corretamente em 1.77 segundos.
+
+Resolvendo o problema numero 89
+Problema 089 resolvido corretamente em 2.50 segundos.
+
+Resolvendo o problema numero 90
+Problema 090 resolvido corretamente em 3.96 segundos.
+
+Resolvendo o problema numero 91
+Problema 091 resolvido corretamente em 1.12 segundos.
+
+Resolvendo o problema numero 92
+Problema 092 resolvido corretamente em 1.11 segundos.
+
+Resolvendo o problema numero 93
+Problema 093 resolvido corretamente em 2.94 segundos.
+
+Resolvendo o problema numero 94
+Problema 094 resolvido corretamente em 1.12 segundos.
+
+Resolvendo o problema numero 95
+Problema 095 resolvido corretamente em 2.71 segundos.
+
+Resolvendo o problema numero 96
+Problema 096 resolvido corretamente em 1.27 segundos.
+
+Resolvendo o problema numero 97
+Problema 097 resolvido corretamente em 1.61 segundos.
+
+Resolvendo o problema numero 98
+Problema 098 resolvido corretamente em 7.10 segundos.
+
+Resolvendo o problema numero 99
+Problema 099 resolvido corretamente em 18.40 segundos.
+
+Resolvendo o problema numero 100
+Problema 100 resolvido corretamente em 3.79 segundos.
+
+Resolvendo o problema numero 101
+Problema 101 resolvido corretamente em 1.14 segundos.
+
+Resolvendo o problema numero 102
+Problema 102 resolvido corretamente em 1.13 segundos.
+
+Resolvendo o problema numero 103
+Problema 103 resolvido corretamente em 1.16 segundos.
+
+Resolvendo o problema numero 104
+Problema 104 resolvido corretamente em 1.13 segundos.
+
+Resolvendo o problema numero 105
+Problema 105 resolvido corretamente em 1.40 segundos.
+
+Resolvendo o problema numero 106
+Problema 106 resolvido corretamente em 2.17 segundos.
+
+Resolvendo o problema numero 107
+Problema 107 resolvido corretamente em 3.17 segundos.
+
+Resolvendo o problema numero 108
+Problema 108 resolvido corretamente em 3.08 segundos.
+
+Resolvendo o problema numero 109
+Problema 109 resolvido corretamente em 9.83 segundos.
+
+Resolvendo o problema numero 110
+Problema 110 resolvido corretamente em 41.02 segundos.
+
+001: Correto, Tempo: 1.12 segundos
+002: Correto, Tempo: 1.11 segundos
+003: Correto, Tempo: 1.10 segundos
+004: Correto, Tempo: 1.16 segundos
+005: Correto, Tempo: 1.12 segundos
+006: Correto, Tempo: 1.11 segundos
+007: Correto, Tempo: 1.12 segundos
+008: Correto, Tempo: 1.27 segundos
+009: Correto, Tempo: 1.16 segundos
+010: Correto, Tempo: 1.11 segundos
+011: Correto, Tempo: 1.13 segundos
+012: Correto, Tempo: 1.12 segundos
+013: Correto, Tempo: 1.14 segundos
+014: Correto, Tempo: 2.01 segundos
+015: Correto, Tempo: 1.17 segundos
+016: Correto, Tempo: 1.18 segundos
+017: Correto, Tempo: 1.27 segundos
+018: Correto, Tempo: 1.28 segundos
+019: Correto, Tempo: 1.61 segundos
+020: Correto, Tempo: 1.60 segundos
+021: Correto, Tempo: 1.15 segundos
+022: Correto, Tempo: 1.16 segundos
+023: Correto, Tempo: 1.20 segundos
+024: Correto, Tempo: 1.18 segundos
+025: Correto, Tempo: 1.34 segundos
+026: Correto, Tempo: 1.85 segundos
+027: Correto, Tempo: 2.32 segundos
+028: Correto, Tempo: 1.24 segundos
+029: Correto, Tempo: 1.70 segundos
+030: Correto, Tempo: 1.36 segundos
+031: Correto, Tempo: 1.18 segundos
+032: Correto, Tempo: 1.12 segundos
+033: Correto, Tempo: 1.19 segundos
+034: Correto, Tempo: 1.24 segundos
+035: Correto, Tempo: 1.14 segundos
+036: Correto, Tempo: 1.17 segundos
+037: Correto, Tempo: 2.35 segundos
+038: Correto, Tempo: 1.80 segundos
+039: Correto, Tempo: 7.25 segundos
+040: Correto, Tempo: 1.50 segundos
+041: Correto, Tempo: 1.13 segundos
+042: Correto, Tempo: 1.13 segundos
+043: Correto, Tempo: 1.15 segundos
+044: Correto, Tempo: 17.12 segundos
+045: Correto, Tempo: 1.15 segundos
+046: Correto, Tempo: 2.74 segundos
+047: Correto, Tempo: 3.64 segundos
+048: Correto, Tempo: 2.11 segundos
+049: Correto, Tempo: 1.31 segundos
+050: Correto, Tempo: 9.48 segundos
+051: Correto, Tempo: 1.13 segundos
+052: Correto, Tempo: 1.12 segundos
+053: Correto, Tempo: 1.15 segundos
+054: Correto, Tempo: 1.25 segundos
+055: Correto, Tempo: 2.89 segundos
+056: Correto, Tempo: 1.49 segundos
+057: Correto, Tempo: 2.62 segundos
+058: Correto, Tempo: 8.03 segundos
+059: Correto, Tempo: 5.78 segundos
+060: Correto, Tempo: 44.43 segundos
+061: Correto, Tempo: 1.12 segundos
+062: Correto, Tempo: 1.14 segundos
+063: Correto, Tempo: 1.26 segundos
+064: Correto, Tempo: 1.13 segundos
+065: Correto, Tempo: 4.26 segundos
+066: Correto, Tempo: 1.33 segundos
+067: Correto, Tempo: 1.51 segundos
+068: Correto, Tempo: 1.51 segundos
+069: Correto, Tempo: 23.04 segundos
+070: Correto, Tempo: 55.90 segundos
+071: Correto, Tempo: 1.14 segundos
+072: Correto, Tempo: 1.14 segundos
+073: Correto, Tempo: 1.27 segundos
+074: Correto, Tempo: 1.19 segundos
+075: Correto, Tempo: 1.42 segundos
+076: Correto, Tempo: 1.42 segundos
+077: Correto, Tempo: 5.35 segundos
+078: Correto, Tempo: 9.97 segundos
+079: Correto, Tempo: 2.83 segundos
+080: Correto, Tempo: 6.87 segundos
+081: Correto, Tempo: 1.12 segundos
+082: Correto, Tempo: 1.11 segundos
+083: Correto, Tempo: 1.15 segundos
+084: Correto, Tempo: 1.16 segundos
+085: Correto, Tempo: 1.61 segundos
+086: Correto, Tempo: 30.13 segundos
+087: Correto, Tempo: 1.93 segundos
+088: Correto, Tempo: 1.77 segundos
+089: Correto, Tempo: 2.50 segundos
+090: Correto, Tempo: 3.96 segundos
+091: Correto, Tempo: 1.12 segundos
+092: Correto, Tempo: 1.11 segundos
+093: Correto, Tempo: 2.94 segundos
+094: Correto, Tempo: 1.12 segundos
+095: Correto, Tempo: 2.71 segundos
+096: Correto, Tempo: 1.27 segundos
+097: Correto, Tempo: 1.61 segundos
+098: Correto, Tempo: 7.10 segundos
+099: Correto, Tempo: 18.40 segundos
+100: Correto, Tempo: 3.79 segundos
+101: Correto, Tempo: 1.14 segundos
+102: Correto, Tempo: 1.13 segundos
+103: Correto, Tempo: 1.16 segundos
+104: Correto, Tempo: 1.13 segundos
+105: Correto, Tempo: 1.40 segundos
+106: Correto, Tempo: 2.17 segundos
+107: Correto, Tempo: 3.17 segundos
+108: Correto, Tempo: 3.08 segundos
+109: Correto, Tempo: 9.83 segundos
+110: Correto, Tempo: 41.02 segundos
+
+
+Total de problemas resolvidos: 110/110 em 447.83 segundos

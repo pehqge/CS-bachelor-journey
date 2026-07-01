@@ -1,0 +1,46 @@
+{
+    "curso": {
+        "codigo_curso": "501",
+        "nome_curso": "AGRONOMIA",
+        "curriculo": "20251",
+        "habilitacao": "Engenheiro Agrônomo\nRenovação de Reconhecimento do Curso pela Portaria nº 111 de 04"
+    },
+    "disciplinas": [
+        {
+            "fase": "2ª Fase-sugestão",
+            "disciplinas": []
+        },
+        {
+            "fase": "3ª Fase-sugestão",
+            "disciplinas": []
+        },
+        {
+            "fase": "4ª Fase-sugestão",
+            "disciplinas": []
+        },
+        {
+            "fase": "5ª Fase-sugestão",
+            "disciplinas": []
+        },
+        {
+            "fase": "6ª Fase-sugestão",
+            "disciplinas": []
+        },
+        {
+            "fase": "7ª Fase-sugestão",
+            "disciplinas": []
+        },
+        {
+            "fase": "8ª Fase-sugestão",
+            "disciplinas": []
+        },
+        {
+            "fase": "9ª Fase-sugestão",
+            "disciplinas": []
+        },
+        {
+            "fase": "10ª Fase-sugestão",
+            "disciplinas": []
+        }
+    ]
+}

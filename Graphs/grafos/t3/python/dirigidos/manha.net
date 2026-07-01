@@ -1,0 +1,34 @@
+*vertices 11
+1 "Acordar"
+2 "Escovar os dentes"
+3 "Tomar café da manhã"
+4 "Ler o jornal"
+5 "Tomar banho"
+6 "Vestir roupa de baixo"
+7 "Vestir calças"
+8 "Calçar meias"
+9 "Vestir camisa"
+10 "Calçar tênis"
+11 "Sair"
+*arcs
+1 2 1
+1 3 1
+1 4 1
+1 5 1
+1 6 1
+1 7 1
+1 8 1
+1 9 1
+1 10 1
+1 11 1
+3 2 1
+3 4 1
+4 5 1
+5 6 1
+5 8 1
+5 9 1
+6 7 1
+7 10 1
+9 11 1
+10 11 1
+7 11 1

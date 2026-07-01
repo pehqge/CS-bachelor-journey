@@ -1,0 +1,12 @@
+*vertices 5
+1 vertice_A
+2 vertice_B
+3 vertice_C
+4 vertice_D
+5 vertice_E
+*edges
+1 2 10
+1 3 15
+2 4 12
+3 5 10
+4 5 8
