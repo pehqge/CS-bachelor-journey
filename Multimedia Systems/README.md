@@ -23,4 +23,10 @@ Cada prática tem seu código e, quando o enunciado pediu, um relatório (`RELAT
 
 ### **[multimidia.pehqge.com](https://multimidia.pehqge.com)**
 
-Fiz um site para estudar para as provas da disciplina e deixei no ar para quem quiser usar. Cobre o conteúdo das videoaulas com aulas explicadas, demos interativos, o banco de perguntas do professor e uma cola para impressão.
+Fiz um site para estudar para as provas da disciplina e deixei no ar para quem quiser usar. Tem uma aba por prova, cobrindo os 11 capítulos do curso: as aulas explicadas do zero com as fórmulas e os cálculos passo a passo, exercícios com gabarito, demos interativos e a cola em PDF pronta para imprimir. O material original do professor também está lá.
+
+| Prova | Conteúdo |
+|---|---|
+| Prova 1 | Fundamentos de mídia e compressão (caps. 1 a 3). |
+| Prova 2 | Hipermídia, TV digital e requisitos de rede (caps. 4 a 6). |
+| Prova 3 | Redes IP, QoS, VoIP e streaming (caps. 7 a 11). |

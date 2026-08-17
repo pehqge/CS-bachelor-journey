@@ -23,4 +23,10 @@ Each practical has its code and, whenever the assignment asked for it, a report 
 
 ### **[multimidia.pehqge.com](https://multimidia.pehqge.com)**
 
-I built a site to study for this course's exams and left it online for anyone who wants it. It covers the video lectures with worked-through lessons, interactive demos, the professor's question bank and a printable cheat sheet. The content is in Portuguese.
+I built a site to study for this course's exams and left it online for anyone who wants it. It has one tab per exam, covering all 11 chapters of the course: lessons worked through from scratch with the formulas and the step-by-step math, exercises with answers, interactive demos and a printable cheat sheet in PDF. The professor's original material is in there too. The content is in Portuguese.
+
+| Exam | Content |
+|---|---|
+| Prova 1 | Media fundamentals and compression (chapters 1 to 3). |
+| Prova 2 | Hypermedia, digital TV and network requirements (chapters 4 to 6). |
+| Prova 3 | IP networks, QoS, VoIP and streaming (chapters 7 to 11). |
