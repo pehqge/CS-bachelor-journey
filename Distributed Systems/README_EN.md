@@ -2,7 +2,8 @@
 
 # INE5418 - Distributed Systems
 
-Group 17: Gustavo Rodrigues Alves D'Angelo, Pedro Henrique Gimenez and Tom Pereira Hunt.
+**Group 17:** Gustavo Rodrigues Alves D'Angelo, Pedro Henrique Gimenez and Tom Pereira Hunt
+**Semester:** 7th · 2026.1
 
 These are the two course projects, each in its own folder. Trabalho 1 is a distributed URL shortener with caching and a circuit breaker. Trabalho 2 is a distributed filesystem built on State Machine Replication (SMR).
 
@@ -11,7 +12,13 @@ These are the two course projects, each in its own folder. Trabalho 1 is a distr
 | [Trabalho 1/](Trabalho%201) | Distributed URL shortener (client, interceptor and REST server). |
 | [Trabalho 2/](Trabalho%202) | Distributed filesystem on SMR, replicated across 3 nodes. |
 
-Original repository: [gustavovonn/distributed-fs](https://github.com/gustavovonn/distributed-fs)
+Original repository for Trabalho 2: [gustavovonn/distributed-fs](https://github.com/gustavovonn/distributed-fs)
+
+## 📚 Exam study site
+
+### **[distribuida.pehqge.com](https://distribuida.pehqge.com)**
+
+I built a site to study for this course's exam and left it online for anyone who wants it. It has 7 modules and 23 lessons covering the whole syllabus (logical clocks, message ordering, mutual exclusion, consensus, replication, middleware and transparency), with interactive labs, open-ended questions graded by an LLM and mock exams assembled from past papers. The content is in Portuguese.
 
 ## Trabalho 1 - Distributed URL shortener
 
@@ -61,7 +68,6 @@ A strongly consistent filesystem in plain Python, built on State Machine Replica
 | [scripts/run_tests.py](Trabalho%202/scripts/run_tests.py) | Test suite (10 scenarios). |
 | [scripts/cleanup.sh](Trabalho%202/scripts/cleanup.sh) | Stops the nodes and wipes the test environment. |
 | [slides/apresentacao.pdf](Trabalho%202/slides/apresentacao.pdf) | Presentation slides. |
-| [video_apresentacao.md](Trabalho%202/video_apresentacao.md) | Link to the demo video. |
 
 ### Demos
 

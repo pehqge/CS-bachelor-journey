@@ -2,7 +2,8 @@
 
 # INE5418 - Computação Distribuída
 
-Grupo 17: Gustavo Rodrigues Alves D'Angelo, Pedro Henrique Gimenez e Tom Pereira Hunt.
+**Grupo 17:** Gustavo Rodrigues Alves D'Angelo, Pedro Henrique Gimenez e Tom Pereira Hunt
+**Semestre:** 7º · 2026.1
 
 São os dois trabalhos da disciplina, cada um na sua pasta. O Trabalho 1 é um encurtador de URLs distribuído com cache e circuit breaker. O Trabalho 2 é um sistema de arquivos distribuído sobre Replicação de Máquina de Estados (SMR).
 
@@ -11,7 +12,13 @@ São os dois trabalhos da disciplina, cada um na sua pasta. O Trabalho 1 é um e
 | [Trabalho 1/](Trabalho%201) | Encurtador de URLs distribuído (cliente, interceptador e servidor REST). |
 | [Trabalho 2/](Trabalho%202) | Sistema de arquivos distribuído sobre SMR, replicado em 3 nós. |
 
-Repositório original: [gustavovonn/distributed-fs](https://github.com/gustavovonn/distributed-fs)
+Repositório original do Trabalho 2: [gustavovonn/distributed-fs](https://github.com/gustavovonn/distributed-fs)
+
+## 📚 Site de estudo para a prova
+
+### **[distribuida.pehqge.com](https://distribuida.pehqge.com)**
+
+Fiz um site para estudar para a prova da disciplina e deixei no ar para quem quiser usar. São 7 módulos e 23 lições cobrindo a ementa inteira (relógios lógicos, ordenação de mensagens, exclusão mútua, consenso, replicação, middleware e transparência), com laboratórios interativos, questões discursivas corrigidas por IA e simulados montados a partir das provas antigas.
 
 ## Trabalho 1 - Encurtador de URLs distribuído
 
@@ -61,7 +68,6 @@ Um sistema de arquivos fortemente consistente, em Python puro, sobre Replicaçã
 | [scripts/run_tests.py](Trabalho%202/scripts/run_tests.py) | Suíte de testes (10 cenários). |
 | [scripts/cleanup.sh](Trabalho%202/scripts/cleanup.sh) | Para os nós e limpa o ambiente de teste. |
 | [slides/apresentacao.pdf](Trabalho%202/slides/apresentacao.pdf) | Slides da apresentação. |
-| [video_apresentacao.md](Trabalho%202/video_apresentacao.md) | Link do vídeo com as demos. |
 
 ### Demos
 

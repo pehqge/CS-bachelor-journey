@@ -4,6 +4,7 @@
 
 **Team:** Pedro Henrique Gimenez and Tom Pereira Hunt
 **Professor:** Roberto Willrich
+**Semester:** 7th · 2026.1
 
 These are the practical assignments I did for the course. All of them deal with digital media processing in Python: image manipulation, file formats, quality metrics and compression. Practicals 3 and 4 each come with a Markdown report that holds the answers and the analysis of the results.
 
@@ -17,3 +18,9 @@ These are the practical assignments I did for the course. All of them deal with 
 | [Prática 4](./Prática%204/) | Entropy compression with RLE, the YCbCr color space and a comparison of size and PSNR across CUIF.1, CUIF.2, CUIF.3 and CUIF.4. | [praticaIV.py](./Prática%204/praticaIV.py) · [RELATORIO.md](./Prática%204/RELATORIO.md) |
 
 Each practical has its code and, whenever the assignment asked for it, a report (`RELATORIO.md`) with the math and the reasoning behind every answer.
+
+## 📚 Exam study site
+
+### **[multimidia.pehqge.com](https://multimidia.pehqge.com)**
+
+I built a site to study for this course's exams and left it online for anyone who wants it. It covers the video lectures with worked-through lessons, interactive demos, the professor's question bank and a printable cheat sheet. The content is in Portuguese.

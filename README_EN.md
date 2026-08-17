@@ -25,5 +25,6 @@ Repository for the programming courses I have taken in the Bachelor’s program 
 |  INE5421  | [Formal Languages and Compilers](./Formal%20Languages%20and%20Compilers/) | **6th Semester** - 25.2 | [Lexical & Syntactic Analyzer](./Formal%20Languages%20and%20Compilers/) |
 |  INE5423  | [Database I](./Database%20I/) | **6th Semester** - 25.2 | [Relational Database (SQL)](./Database%20I/Trabalho%20Final/Código) |
 |  INE5418  | [Distributed Systems](./Distributed%20Systems/) | **7th Semester** - 26.1 | [Distributed Filesystem (SMR)](./Distributed%20Systems/) |
-|  INE5425  | [Modeling and Simulation](./Modeling%20and%20Simulation/) | **7th Semester** - 26.1 | [Cellular Automata in GenESyS](https://github.com/JVSutter/Genesys-Simulator-cellular-automata) |
+|  INE5425  | [Modeling and Simulation](./Modeling%20and%20Simulation/) | **7th Semester** - 26.1 | [Cellular Automata in GenESyS](https://github.com/rlcancian/Genesys-Simulator/issues/453) |
 |  INE5431  | [Multimedia Systems](./Multimedia%20Systems/) | **7th Semester** - 26.1 | [Practical IV](./Multimedia%20Systems/Prática%204) |
+| INE410159 | [Computer Vision](./Computer%20Vision/) | **7th Semester** - 26.1 | [Boxing Punch Detection and Classification](https://github.com/leonardosm14/boxe.ml) |

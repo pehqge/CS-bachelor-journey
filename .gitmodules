@@ -7,3 +7,10 @@
 [submodule "Software Engineering I/soma10"]
 	path = Software Engineering I/soma10
 	url = https://github.com/pehqge/soma10.git
+[submodule "Computer Vision/boxe.ml"]
+	path = Computer Vision/boxe.ml
+	url = https://github.com/leonardosm14/boxe.ml.git
+[submodule "Modeling and Simulation/Genesys-Simulator-cellular-automata"]
+	branch = tema6-2026-1
+	path = Modeling and Simulation/Genesys-Simulator-cellular-automata
+	url = https://github.com/JVSutter/Genesys-Simulator-cellular-automata.git

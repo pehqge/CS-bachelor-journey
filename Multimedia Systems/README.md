@@ -4,6 +4,7 @@
 
 **Equipe:** Pedro Henrique Gimenez e Tom Pereira Hunt
 **Professor:** Roberto Willrich
+**Semestre:** 7º · 2026.1
 
 Aqui ficam as práticas que fiz na disciplina. Todas tratam de processamento de mídia digital em Python: manipulação de imagem, formato de arquivo, medida de qualidade e compressão. As práticas 3 e 4 têm um relatório em Markdown com as respostas e a análise dos resultados.
 
@@ -17,3 +18,9 @@ Aqui ficam as práticas que fiz na disciplina. Todas tratam de processamento de 
 | [Prática 4](./Prática%204/) | Compressão de entropia com RLE, espaço de cor YCbCr e comparação do tamanho e do PSNR entre CUIF.1, CUIF.2, CUIF.3 e CUIF.4. | [praticaIV.py](./Prática%204/praticaIV.py) · [RELATORIO.md](./Prática%204/RELATORIO.md) |
 
 Cada prática tem seu código e, quando o enunciado pediu, um relatório (`RELATORIO.md`) com as contas e a explicação de cada resposta.
+
+## 📚 Site de estudo para as provas
+
+### **[multimidia.pehqge.com](https://multimidia.pehqge.com)**
+
+Fiz um site para estudar para as provas da disciplina e deixei no ar para quem quiser usar. Cobre o conteúdo das videoaulas com aulas explicadas, demos interativos, o banco de perguntas do professor e uma cola para impressão.

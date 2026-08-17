@@ -25,5 +25,6 @@ Repositório de programação das disciplinas cursadas por mim no curso bacharel
 | INE5421 | [Linguagens Formais e Compiladores](./Formal%20Languages%20and%20Compilers/) | **6º Semestre** - 25.2 | [Analisador Léxico e Sintático](./Formal%20Languages%20and%20Compilers/) |
 | INE5423 | [Banco de Dados I](./Database%20I/) | **6º Semestre** - 25.2 | [Banco de Dados Relacional (SQL)](./Database%20I/Trabalho%20Final/Código) |
 | INE5418 | [Computação Distribuída](./Distributed%20Systems/) | **7º Semestre** - 26.1 | [Sistema de Arquivos Distribuído (SMR)](./Distributed%20Systems/) |
-| INE5425 | [Modelagem e Simulação](./Modeling%20and%20Simulation/) | **7º Semestre** - 26.1 | [Autômatos Celulares no GenESyS](https://github.com/JVSutter/Genesys-Simulator-cellular-automata) |
+| INE5425 | [Modelagem e Simulação](./Modeling%20and%20Simulation/) | **7º Semestre** - 26.1 | [Autômatos Celulares no GenESyS](https://github.com/rlcancian/Genesys-Simulator/issues/453) |
 | INE5431 | [Sistemas Multimídia](./Multimedia%20Systems/) | **7º Semestre** - 26.1 | [Prática IV](./Multimedia%20Systems/Prática%204) |
+| INE410159 | [Visão Computacional](./Computer%20Vision/) | **7º Semestre** - 26.1 | [Detecção e Classificação de Golpes em Boxe](https://github.com/leonardosm14/boxe.ml) |
