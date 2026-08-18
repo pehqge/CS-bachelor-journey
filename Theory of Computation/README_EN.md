@@ -4,16 +4,9 @@
 
 **Team:** Pedro Henrique Gimenez, Rita and Rafael
 
-This is Assignment 1 of the course. We built finite automata in JFLAP (`.jff` files) and wrote the report.
+The course's Trabalho 1: finite automata built in JFLAP, with the [report](Trabalho%201/Relatorio.pdf) on the constructions.
 
-## Assignment 1
-
-| Item | Where | Description |
-|---|---|---|
-| Report | [Trabalho 1/Relatorio.pdf](Trabalho%201/Relatorio.pdf) | Assignment report |
-| Machines | [Trabalho 1/Maquinas](Trabalho%201/Maquinas) | Folder with the JFLAP automata |
-
-## Machines (JFLAP)
+The automata are in [Trabalho 1/Maquinas](Trabalho%201/Maquinas), one `.jff` file per exercise.
 
 | Exercise | File |
 |---|---|

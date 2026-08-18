@@ -2,11 +2,7 @@
 
 # INE5402 - Object-Oriented Programming I
 
-This was the first programming course in the degree. In practice it was where I learned Python, with a focus on solving competitive programming problems. The exams were lists of problems that I solved and submitted.
-
-## Final Project
-
-For the final project I made a game called **Misture Meu Chá!** (Mix My Tea!). The code and the full write-up live in the game's own repository. Here this folder is a submodule that points to it.
+The first programming course of the degree, in Python, graded through lists of competitive programming problems. The final project was the game **Misture Meu Chá!** (Mix My Tea!), which lives in its own repository and comes in here as a submodule.
 
 Game repository: **[Misture Meu Chá!](https://github.com/pehqge/Misture-Meu-Cha)**
 
@@ -19,18 +15,13 @@ Game repository: **[Misture Meu Chá!](https://github.com/pehqge/Misture-Meu-Cha
 
 ## Exams
 
-Each exam was a list of competitive problems that I solved in Python. They all live in the [Provas](./Provas/) folder.
+Each exam was a list of competitive programming problems solved in Python.
 
-| Exam | Content |
-| :--: | :------ |
-| [Prova 1](./Provas/Prova%201/) | 7 solved problems. |
-| [Prova 2](./Provas/Prova%202/) | Statement as a PDF. |
-| [Prova 3](./Provas/Prova%203/) | 12 solved problems. |
-| [Prova 4](./Provas/Prova%204/) | 7 solved problems. |
+| Exam | Problems solved |
+| :--: | :-------------: |
+| [Prova 1](./Provas/Prova%201/) | 7 |
+| [Prova 2](./Provas/Prova%202/) | statement only, as a PDF |
+| [Prova 3](./Provas/Prova%203/) | 12 |
+| [Prova 4](./Provas/Prova%204/) | 7 |
 
-## Other
-
-| Item | Description |
-| :--- | :---------- |
-| [Final Project: Misture Meu Chá!](https://github.com/pehqge/Misture-Meu-Cha) | Game written in Python as the final project. It lives in another repository (submodule). |
-| [Python Runner](./Python%20Runner/) | Script I use to run the problems locally, reading input from `input.txt` and writing to `output.txt`. |
+[Python Runner](./Python%20Runner/) is the script I use to run the problems locally, reading input from `input.txt` and writing to `output.txt`.

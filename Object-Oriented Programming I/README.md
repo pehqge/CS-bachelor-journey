@@ -2,11 +2,7 @@
 
 # INE5402 - Programação Orientada a Objetos I
 
-Foi a primeira disciplina de programação do curso. Na prática ela serviu pra eu aprender Python, com foco em resolver problemas de maratona de programação. As provas eram listas de problemas que eu resolvia e submetia.
-
-## Trabalho Final
-
-No trabalho final eu fiz um jogo chamado **Misture Meu Chá!**. O código e a explicação completa estão no repositório do jogo. Aqui no repositório essa pasta é um submódulo que aponta pra lá.
+Primeira disciplina de programação do curso, em Python, com avaliação por listas de problemas de maratona. O trabalho final foi o jogo **Misture Meu Chá!**, que vive no próprio repositório e entra aqui como submódulo.
 
 Repositório do jogo: **[Misture Meu Chá!](https://github.com/pehqge/Misture-Meu-Cha)**
 
@@ -19,18 +15,13 @@ Repositório do jogo: **[Misture Meu Chá!](https://github.com/pehqge/Misture-Me
 
 ## Provas
 
-Cada prova era uma lista de problemas de maratona que eu resolvia em Python. Ficam todas na pasta [Provas](./Provas/).
+Cada prova era uma lista de problemas de maratona resolvidos em Python.
 
-| Prova | Conteúdo |
-| :---: | :------- |
-| [Prova 1](./Provas/Prova%201/) | 7 problemas resolvidos. |
-| [Prova 2](./Provas/Prova%202/) | Enunciado em PDF. |
-| [Prova 3](./Provas/Prova%203/) | 12 problemas resolvidos. |
-| [Prova 4](./Provas/Prova%204/) | 7 problemas resolvidos. |
+| Prova | Problemas resolvidos |
+| :---: | :------------------: |
+| [Prova 1](./Provas/Prova%201/) | 7 |
+| [Prova 2](./Provas/Prova%202/) | só o enunciado, em PDF |
+| [Prova 3](./Provas/Prova%203/) | 12 |
+| [Prova 4](./Provas/Prova%204/) | 7 |
 
-## Outros
-
-| Item | Descrição |
-| :--- | :-------- |
-| [Trabalho Final: Misture Meu Chá!](https://github.com/pehqge/Misture-Meu-Cha) | Jogo feito em Python como projeto final. Fica em outro repositório (submódulo). |
-| [Python Runner](./Python%20Runner/) | Script que uso pra rodar os problemas localmente, lendo a entrada de `input.txt` e escrevendo em `output.txt`. |
+O [Python Runner](./Python%20Runner/) é o script que uso para rodar os problemas localmente, lendo a entrada de `input.txt` e escrevendo em `output.txt`.

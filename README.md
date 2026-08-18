@@ -1,9 +1,8 @@
 [<kbd><img title="English" alt="English" src="https://flagicons.lipis.dev/flags/4x3/us.svg" width="22"></kbd> English version](README_EN.md)
 
 # Disciplinas de Ciências da Computação
-Repositório de programação das disciplinas cursadas por mim no curso bacharelado em Ciências da Computação pela Universidade Federal de Santa Catarina
 
-### Disciplinas da Graduação Realizadas na UFSC
+Os trabalhos de programação das disciplinas que cursei no bacharelado em Ciências da Computação da Universidade Federal de Santa Catarina. Cada pasta tem o próprio README com o que foi feito na disciplina.
 
 | Código  | Disciplina                | Semestre | Trabalho Final |
 | ------  | :-----------------------: | :--------: | :-------------: |

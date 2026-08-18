@@ -4,10 +4,10 @@
 
 **Authors:** João Vitor Curcio Sutter and Pedro Henrique Gimenez
 
-These are the programming exercises (EPs) for the Numerical Calculus course. Each EP solves a numerical problem in Python and comes with a report. The topics range from root finding and polynomial evaluation to nonlinear systems and ODE integration. Dependencies are listed in [requirements.txt](requirements.txt) (NumPy and Matplotlib).
+The course's three programming exercises (EPs). Each one implements a numerical method in Python and comes with a report. Dependencies in [requirements.txt](requirements.txt) (NumPy and Matplotlib).
 
-| Exercise | Topic | Report |
-| :------- | :---- | :----- |
-| [EP1](EP1) | Muller's method for roots and Horner's method for polynomial evaluation. Code in [horner.py](EP1/horner.py) and [muller.py](EP1/muller.py). | [Report](EP1/Relatório%20-%20EP1.pdf) |
-| [EP2](EP2) | Newton's method for nonlinear systems, with graphs. Code in parts [T1](EP2/T1) and [T2](EP2/T2). | [Report](EP2/Relatorio%20EP2.ipynb) |
-| [EP3](EP3) | Runge-Kutta method for ordinary differential equations. Code in [runge_kutta.py](EP3/runge_kutta.py). | [Report](EP3/Relatorio%20EP3.ipynb) |
+| Exercise | Method | Report |
+| :------- | :----- | :----- |
+| [EP1](EP1) | Muller for roots and Horner for polynomial evaluation, in [muller.py](EP1/muller.py) and [horner.py](EP1/horner.py). | [PDF](EP1/Relatório%20-%20EP1.pdf) |
+| [EP2](EP2) | Newton for nonlinear systems, with graphs. Code in [T1](EP2/T1) and [T2](EP2/T2). | [Notebook](EP2/Relatorio%20EP2.ipynb) |
+| [EP3](EP3) | Runge-Kutta for ordinary differential equations, in [runge_kutta.py](EP3/runge_kutta.py). | [Notebook](EP3/Relatorio%20EP3.ipynb) |

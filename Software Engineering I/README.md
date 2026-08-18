@@ -2,14 +2,11 @@
 
 # INE5417 - Engenharia de Software I
 
-Nesta disciplina segui o processo de engenharia de software do começo ao fim, dos requisitos até uma implementação que roda, aplicado a um jogo de tabuleiro.
-
-O trabalho final foi o **Soma 10**, um jogo para dois jogadores em 16 casas ligadas entre si. Ganha quem junta mais fichas fazendo somas que dão 10. Entreguei a especificação de requisitos, a modelagem UML e o jogo em Python. O código do jogo fica no próprio repositório, incluído aqui como submodule.
+O trabalho final foi o **Soma 10**, um jogo de tabuleiro para dois jogadores em 16 casas ligadas entre si, em que ganha quem junta mais fichas fazendo somas que dão 10. A entrega passou pelo processo completo, da especificação de requisitos à modelagem UML e ao jogo rodando em Python. O código vive no próprio repositório e entra aqui como submódulo.
 
 | Item | O que é |
 |------|---------|
-| [soma10 (repositório do jogo)](https://github.com/pehqge/soma10) | Submodule com o jogo completo: código, documentação e dependências. |
+| [soma10](https://github.com/pehqge/soma10) | Submódulo com o jogo completo: código, documentação e dependências. |
 | [Especificação de requisitos](https://github.com/pehqge/soma10/blob/main/doc/Especificacao%20de%20Requisitos.pdf) | Documento com os requisitos do jogo. |
-| [Modelagem UML (Visual Paradigm)](https://github.com/pehqge/soma10/tree/main/doc/modelagem) | Projeto `.vpp` com os diagramas. |
-| [Código-fonte (src)](https://github.com/pehqge/soma10/tree/main/src) | Implementação do jogo em Python. |
+| [Modelagem UML](https://github.com/pehqge/soma10/tree/main/doc/modelagem) | Projeto `.vpp` do Visual Paradigm com os diagramas. |
 | [Cronograma.pdf](Cronograma.pdf) | Cronograma da disciplina. |

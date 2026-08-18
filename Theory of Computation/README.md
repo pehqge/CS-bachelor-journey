@@ -4,16 +4,9 @@
 
 **Equipe:** Pedro Henrique Gimenez, Rita e Rafael
 
-Aqui está o Trabalho 1 da disciplina. Fizemos autômatos finitos no JFLAP (arquivos `.jff`) e escrevemos o relatório.
+O Trabalho 1 da disciplina: autômatos finitos construídos no JFLAP, com o [relatório](Trabalho%201/Relatorio.pdf) das construções.
 
-## Trabalho 1
-
-| Item | Onde | Descrição |
-|---|---|---|
-| Relatório | [Trabalho 1/Relatorio.pdf](Trabalho%201/Relatorio.pdf) | Relatório do trabalho |
-| Máquinas | [Trabalho 1/Maquinas](Trabalho%201/Maquinas) | Pasta com os autômatos do JFLAP |
-
-## Máquinas (JFLAP)
+Os autômatos estão em [Trabalho 1/Maquinas](Trabalho%201/Maquinas), um arquivo `.jff` por exercício.
 
 | Exercício | Arquivo |
 |---|---|

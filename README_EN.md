@@ -1,9 +1,8 @@
 [<kbd><img title="Brazilian Portuguese" alt="Brazilian Portuguese" src="https://flagicons.lipis.dev/flags/4x3/br.svg" width="22"></kbd> Versão em português](README.md)
 
 # Computer Science Coursework
-Repository for the programming courses I have taken in the Bachelor’s program in Computer Science at the Federal University of Santa Catarina.
 
-### Undergraduate Courses Taken at UFSC
+The programming work from the courses I took in the Computer Science bachelor's program at the Federal University of Santa Catarina. Each folder has its own README covering what was built in that course.
 
 | Course ID |             Course             | Semester Taken | Final Project |
 | :-------: | :----------------------------: | :------------: | :-----------: |

@@ -2,15 +2,9 @@
 
 # INE5420 - Computação Gráfica
 
-Aqui estão meus trabalhos da disciplina de Computação Gráfica, do professor Aldo Von Wangenheim. O projeto principal foi feito com [João Vitor Curcio Sutter](https://github.com/JVSutter): um Sistema Gráfico Interativo (SGI) escrito em Python. Ele começou como um editor 2D de window e viewport e foi crescendo a cada trabalho até virar um sistema 3D, com projeção em perspectiva e superfícies bicúbicas de Bézier. Cada `Trabalho 1.x` abaixo é uma versão do sistema naquele estágio. Todas as entregas tiraram nota 10.
+Disciplina do professor Aldo Von Wangenheim. O projeto, feito com [João Vitor Curcio Sutter](https://github.com/JVSutter), é o Sistema Gráfico Interativo (SGI) em Python: começou como um editor 2D de window e viewport e cresceu a cada entrega até virar um sistema 3D com projeção em perspectiva e superfícies bicúbicas de Bézier.
 
-O repositório original do projeto está em [JVSutter/Sistema-Grafico-Interativo](https://github.com/JVSutter/Sistema-Grafico-Interativo).
-
-## Sistema final
-
-| Pasta | O que é |
-| :---- | :------ |
-| [SGI](SGI) | Versão final do Sistema Gráfico Interativo, pronta para rodar. Estrutura MVC em Python (`model`, `view`, `controller`), com `Makefile` e `main.py`. As instruções de execução estão no [README interno](SGI/README.md). |
+A versão final está em [SGI](SGI), com estrutura MVC (`model`, `view`, `controller`), `Makefile` e instruções de execução no [README interno](SGI/README.md). O repositório original é o [JVSutter/Sistema-Grafico-Interativo](https://github.com/JVSutter/Sistema-Grafico-Interativo).
 
 ## Trabalhos
 
@@ -28,4 +22,4 @@ Cada pasta guarda o SGI no estágio daquele trabalho.
 | [Trabalho 1.8](Trabalho%201.8) | Projeção em perspectiva. |
 | [Trabalho 1.9](Trabalho%201.9) | Superfícies bicúbicas de Bézier. |
 | [Trabalho 1.10](Trabalho%201.10) | Superfícies bicúbicas com forward differences. |
-| [Trabalho Final](Trabalho%20Final) | Modelagem de um objeto de engenharia e o jogo da disciplina. O `link.txt` aponta para a pasta no Drive com a modelagem e o jogo. |
+| [Trabalho Final](Trabalho%20Final) | Modelagem de um objeto de engenharia e o jogo da disciplina. O `link.txt` aponta para a pasta no Drive. |
